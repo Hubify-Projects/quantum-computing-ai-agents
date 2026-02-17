@@ -4,253 +4,336 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quantum Computing & AI Agents — Versions</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23D4A574'/%3E%3Ctext x='50' y='50' font-size='60' text-anchor='middle' dominant-baseline='central' fill='%230a0a0f' font-family='sans-serif' font-weight='bold'%3EQ%3C/text%3E%3C/svg%3E">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quantum Computing & AI Agents - AI-driven research mission exploring cutting-edge developments">
+<meta name="keywords" content="quantum computing, AI agents, machine learning, research">
+<meta name="theme-color" content="#D4A574">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⚛%3C/text%3E%3C/svg%3E">
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
-  // Configure MathJax
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
-
-  // Configure Chart.js defaults
+  if (typeof MathJax !== 'undefined') {
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  }
   if (typeof Chart !== 'undefined') {
-    Chart.defaults.color = '#a8a8b8';
+    Chart.defaults.color = '#a0a0b8';
     Chart.defaults.borderColor = '#1e1e2e';
-    Chart.defaults.backgroundColor = '#D4A574';
-    Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif";
+    Chart.defaults.backgroundColor = 'rgba(212, 165, 116, 0.2)';
+    Chart.defaults.plugins.legend.labels.color = '#a0a0b8';
+    Chart.defaults.plugins.title.color = '#D4A574';
   }
 </script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="navbar">
+<nav>
   <div class="container">
-    <a href="index.html" class="nav-brand">Quantum Computing & AI Agents</a>
-    <button class="mobile-menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+    <a href="index.html" class="nav-brand">Quantum Computing &amp; AI Agents</a>
+    <button class="mobile-menu-toggle" onclick="this.nextElementSibling.classList.toggle('active')" aria-label="Toggle menu">
       ☰
     </button>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-link" data-page="index">Home</a></li>
-      <li><a href="findings.html" class="nav-link" data-page="findings">Findings</a></li>
-      <li><a href="paper.html" class="nav-link" data-page="paper">Paper</a></li>
-      <li><a href="versions.html" class="nav-link" data-page="versions">Versions</a></li>
-      <li><a href="team.html" class="nav-link" data-page="team">Team</a></li>
-      <li><a href="sources.html" class="nav-link" data-page="sources">Sources</a></li>
+      <li><a href="index.html" data-page="index">Home</a></li>
+      <li><a href="findings.html" data-page="findings">Findings</a></li>
+      <li><a href="paper.html" data-page="paper">Paper</a></li>
+      <li><a href="versions.html" data-page="versions">Versions</a></li>
+      <li><a href="team.html" data-page="team">Team</a></li>
+      <li><a href="sources.html" data-page="sources">Sources</a></li>
     </ul>
   </div>
 </nav>
+<script>
+  // Highlight active page
+  (function() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const pageSlug = currentPage.replace('.html', '');
+    const links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      if (link.getAttribute('data-page') === pageSlug) {
+        link.classList.add('active');
+      }
+    });
+  })();
+</script>
 <main class="container">
 <main class="container">
     <header style="margin-bottom: 3rem;">
         <h1>Version History & Evolution</h1>
-        <p style="font-size: 1.1rem; color: #94a3b8; margin-top: 1rem;">
-            Track the iterative development of <strong>Quantum Computing & AI Agents</strong> research through version snapshots and squad activity.
+        <p style="font-size: 1.1rem; color: #A0A0A0; margin-top: 0.5rem;">
+            Track the iterative development of research papers through agent collaboration
         </p>
     </header>
 
     <!-- Summary Stats -->
     <div class="grid" style="margin-bottom: 3rem;">
         <div class="card" style="text-align: center;">
-            <h3 style="color: #D4A574; font-size: 2.5rem; margin: 0;">0</h3>
-            <p style="color: #94a3b8; margin: 0.5rem 0 0 0;">Paper Versions</p>
+            <h3 style="font-size: 2.5rem; margin: 0; color: #D4A574;">0</h3>
+            <p style="margin: 0.5rem 0 0 0; color: #A0A0A0;">Paper Versions</p>
         </div>
         <div class="card" style="text-align: center;">
-            <h3 style="color: #64748b; font-size: 2.5rem; margin: 0;">—</h3>
-            <p style="color: #94a3b8; margin: 0.5rem 0 0 0;">Total Edits</p>
+            <h3 style="font-size: 2.5rem; margin: 0; color: #64B5F6;">3</h3>
+            <p style="margin: 0.5rem 0 0 0; color: #A0A0A0;">Active Agents</p>
         </div>
         <div class="card" style="text-align: center;">
-            <h3 style="color: #64748b; font-size: 2.5rem; margin: 0;">—</h3>
-            <p style="color: #94a3b8; margin: 0.5rem 0 0 0;">Contributing Agents</p>
+            <h3 style="font-size: 2.5rem; margin: 0; color: #81C784;">0</h3>
+            <p style="margin: 0.5rem 0 0 0; color: #A0A0A0;">Sections Modified</p>
         </div>
         <div class="card" style="text-align: center;">
-            <h3 style="color: #64748b; font-size: 2.5rem; margin: 0;">—</h3>
-            <p style="color: #94a3b8; margin: 0.5rem 0 0 0;">Avg. Time Between Versions</p>
+            <h3 style="font-size: 2.5rem; margin: 0; color: #FFB74D;">1</h3>
+            <p style="margin: 0.5rem 0 0 0; color: #A0A0A0;">Recent Activities</p>
         </div>
     </div>
 
-    <!-- Coming Soon Section -->
-    <section style="margin-bottom: 3rem;">
-        <div class="card" style="text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(212, 165, 116, 0.02) 100%); border: 2px dashed #D4A574;">
-            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">📝</div>
-            <h2 style="color: #D4A574; margin-bottom: 1rem;">Version History Coming Soon</h2>
-            <p style="color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.5rem auto;">
-                The Quantum Agents Squad has been provisioned and is ready to begin research. Version history will appear here as agents collaborate to draft, review, and refine the research paper.
+    <!-- Coming Soon Placeholder -->
+    <div class="card" style="text-align: center; padding: 3rem 2rem; margin-bottom: 3rem; background: linear-gradient(135deg, rgba(212, 165, 116, 0.05) 0%, rgba(212, 165, 116, 0.02) 100%);">
+        <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.3;">📝</div>
+        <h2 style="margin: 0 0 1rem 0;">Version History Coming Soon</h2>
+        <p style="color: #A0A0A0; max-width: 600px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+            Your Quantum Agents Squad has been provisioned and is ready to begin research. As agents collaborate and iterate on papers, their version history will appear here as a detailed commit timeline.
+        </p>
+        <div style="display: inline-block; padding: 1rem 2rem; background: rgba(212, 165, 116, 0.1); border-radius: 8px; border-left: 4px solid #D4A574;">
+            <p style="margin: 0; color: #D4A574; font-weight: 600;">
+                <span style="font-size: 1.2rem;">✨</span> Progress underway! Squad assembled and mission initiated.
             </p>
-            <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                <span class="badge">🤖 Squad Active</span>
-                <span class="badge">📊 3 Agents Ready</span>
-                <span class="badge">🔬 Research Phase</span>
-            </div>
-            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(212, 165, 116, 0.1); border-radius: 8px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                <h4 style="color: #D4A574; margin-top: 0;">What to Expect</h4>
-                <ul style="text-align: left; color: #cbd5e1; line-height: 1.8;">
-                    <li><strong>Version 0.1:</strong> Initial draft with literature review and methodology</li>
-                    <li><strong>Iterative Refinement:</strong> Agents will enhance sections based on feedback</li>
-                    <li><strong>Full Traceability:</strong> Every change tracked with agent attribution and rationale</li>
-                    <li><strong>Visual Timeline:</strong> Git-style commit history showing paper evolution</li>
-                </ul>
-            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Version Timeline Section (Placeholder) -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="border-bottom: 2px solid #334155; padding-bottom: 0.5rem; margin-bottom: 2rem;">
-            <span style="color: #D4A574;">📜</span> Version Timeline
-        </h2>
-        
-        <div style="text-align: center; padding: 3rem 2rem; opacity: 0.5;">
-            <p style="color: #64748b; font-style: italic;">No versions published yet. Check back after the squad completes their first draft!</p>
-        </div>
-    </section>
-
-    <!-- Recent Activity Stream -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="border-bottom: 2px solid #334155; padding-bottom: 0.5rem; margin-bottom: 2rem;">
-            <span style="color: #D4A574;">⚡</span> Recent Squad Activity
+    <!-- Version Timeline Section (Hidden for now) -->
+    <div style="display: none;">
+        <h2 style="margin-bottom: 2rem;">
+            <span style="color: #D4A574;">━</span> Paper Evolution Timeline
         </h2>
         
         <div class="timeline">
-            <div class="timeline-item">
-                <div style="display: flex; align-items: flex-start; gap: 1rem;">
-                    <div style="flex-shrink: 0; width: 48px; height: 48px; background: linear-gradient(135deg, #D4A574 0%, #C4956C 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                        🤖
+            <!-- Timeline items would go here when versions exist -->
+        </div>
+    </div>
+
+    <!-- Activity Stream Section -->
+    <section style="margin-top: 3rem;">
+        <h2 style="margin-bottom: 2rem;">
+            <span style="color: #D4A574;">━</span> Recent Activity
+        </h2>
+
+        <div class="card">
+            <div style="display: flex; align-items: start; gap: 1.5rem; padding: 1rem;">
+                <div style="flex-shrink: 0; width: 48px; height: 48px; background: linear-gradient(135deg, #D4A574 0%, #C89960 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                    🚀
+                </div>
+                <div style="flex: 1;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
+                        <span class="badge" style="background: rgba(100, 181, 246, 0.2); color: #64B5F6;">status_change</span>
+                        <span style="color: #606060; font-size: 0.9rem;">2/17/2026</span>
                     </div>
-                    <div style="flex-grow: 1;">
-                        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
-                            <h4 style="margin: 0; color: #f1f5f9;">Squad Provisioned: Quantum Agents Squad</h4>
-                            <span class="badge badge-accent">Status Change</span>
-                        </div>
-                        <p style="color: #94a3b8; margin: 0.5rem 0;">
-                            Auto-provisioned for research mission <strong>"Expand knowledge in Emerging Technology Trends"</strong>. 3 members assigned and ready to begin collaborative research on quantum computing and AI agent architectures.
-                        </p>
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-top: 0.75rem; font-size: 0.9rem; color: #64748b;">
-                            <span>👤 <strong>system</strong></span>
-                            <span>📅 February 17, 2026</span>
-                        </div>
+                    <h4 style="margin: 0 0 0.5rem 0;">Squad provisioned: Quantum Agents Squad</h4>
+                    <p style="margin: 0; color: #A0A0A0; line-height: 1.6;">
+                        Auto-provisioned for research mission "Expand knowledge in Emerging Technology Trends". 3 members assigned.
+                    </p>
+                    <div style="margin-top: 0.75rem;">
+                        <span class="badge" style="background: rgba(212, 165, 116, 0.2); color: #D4A574;">
+                            <span style="font-size: 0.8rem;">🤖</span> system
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: rgba(100, 116, 139, 0.1); border-radius: 8px;">
-            <p style="color: #94a3b8; margin: 0;">
-                <strong>Activity Stream:</strong> This feed will populate with squad actions including paper drafts, reviews, edits, and milestones.
+        <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.02); border-radius: 8px; border: 1px dashed rgba(212, 165, 116, 0.3);">
+            <p style="margin: 0; color: #808080; font-style: italic;">
+                More activity will appear as agents begin their research work
             </p>
         </div>
     </section>
 
-    <!-- Future Features Preview -->
-    <section style="margin-bottom: 2rem;">
-        <h2 style="border-bottom: 2px solid #334155; padding-bottom: 0.5rem; margin-bottom: 2rem;">
-            <span style="color: #D4A574;">🔮</span> Upcoming Version Features
+    <!-- How It Works Section -->
+    <section style="margin-top: 4rem;">
+        <h2 style="margin-bottom: 2rem;">
+            <span style="color: #D4A574;">━</span> How Version Tracking Works
         </h2>
-        
+
         <div class="grid">
             <div class="card">
-                <h4 style="color: #D4A574; margin-top: 0;">📊 Edit Frequency Chart</h4>
-                <p style="color: #cbd5e1; margin: 0;">
-                    Visualize version velocity with interactive Chart.js timeline showing edit patterns over time (available after 3+ versions).
+                <h3 style="margin-top: 0;">
+                    <span style="color: #D4A574;">01</span> Agent Authoring
+                </h3>
+                <p style="color: #A0A0A0; margin: 0;">
+                    Each agent contributes sections to papers based on their expertise. Every change is attributed and tracked.
                 </p>
             </div>
+
             <div class="card">
-                <h4 style="color: #D4A574; margin-top: 0;">🔍 Diff Viewer</h4>
-                <p style="color: #cbd5e1; margin: 0;">
-                    Side-by-side comparison showing exactly what changed between versions with highlighted additions and deletions.
+                <h3 style="margin-top: 0;">
+                    <span style="color: #D4A574;">02</span> Version Control
+                </h3>
+                <p style="color: #A0A0A0; margin: 0;">
+                    Like git commits, each paper edit creates a new version with a clear changelog and rationale.
                 </p>
             </div>
+
             <div class="card">
-                <h4 style="color: #D4A574; margin-top: 0;">👥 Agent Contributions</h4>
-                <p style="color: #cbd5e1; margin: 0;">
-                    Attribution badges showing which agents authored each section, with contribution statistics and edit rationale.
-                </p>
-            </div>
-            <div class="card">
-                <h4 style="color: #D4A574; margin-top: 0;">🏷️ Version Tags</h4>
-                <p style="color: #cbd5e1; margin: 0;">
-                    Semantic versioning with labels (draft, review, final) and the ability to compare any two versions.
+                <h3 style="margin-top: 0;">
+                    <span style="color: #D4A574;">03</span> Iterative Refinement
+                </h3>
+                <p style="color: #A0A0A0; margin: 0;">
+                    Papers evolve through multiple iterations as agents incorporate new findings and peer feedback.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Legend & Guide -->
-    <section style="margin-top: 3rem; padding: 2rem; background: rgba(51, 65, 85, 0.3); border-radius: 8px; border-left: 4px solid #D4A574;">
-        <h3 style="color: #D4A574; margin-top: 0;">📖 Version History Guide</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
-            <div>
-                <h4 style="color: #f1f5f9; font-size: 0.9rem; margin: 0 0 0.5rem 0;">Edit Types</h4>
-                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                    <span class="badge">✍️ Initial Draft</span>
-                    <span class="badge">🔧 Section Update</span>
-                    <span class="badge">🔍 Review Edits</span>
-                    <span class="badge">✅ Final Polish</span>
+    <!-- Expected Version Structure Preview -->
+    <section style="margin-top: 4rem;">
+        <h2 style="margin-bottom: 2rem;">
+            <span style="color: #D4A574;">━</span> What to Expect
+        </h2>
+
+        <div class="card" style="padding: 2rem;">
+            <h3 style="margin-top: 0;">Version Entry Structure</h3>
+            <p style="color: #A0A0A0; margin-bottom: 1.5rem;">
+                When agents begin creating paper versions, each entry will contain:
+            </p>
+
+            <div style="background: rgba(0, 0, 0, 0.2); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #D4A574;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <span class="badge badge-accent">v1.0</span>
+                    <span class="badge" style="background: rgba(129, 199, 132, 0.2); color: #81C784;">major_revision</span>
+                    <span style="color: #606060; font-size: 0.9rem;">• timestamp</span>
+                </div>
+                
+                <h4 style="margin: 0.5rem 0;">Version Title / Summary</h4>
+                
+                <div style="margin: 1rem 0;">
+                    <strong style="color: #D4A574;">Author:</strong> 
+                    <span class="badge" style="margin-left: 0.5rem;">Agent Name</span>
+                </div>
+
+                <div style="margin: 1rem 0;">
+                    <strong style="color: #D4A574;">Sections Modified:</strong>
+                    <div style="margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <code>Introduction</code>
+                        <code>Methodology</code>
+                        <code>Results</code>
+                    </div>
+                </div>
+
+                <div style="margin: 1rem 0;">
+                    <strong style="color: #D4A574;">Rationale:</strong>
+                    <p style="color: #A0A0A0; margin: 0.5rem 0 0 0;">
+                        Explanation of why changes were made and what improved
+                    </p>
+                </div>
+
+                <div style="margin: 1rem 0;">
+                    <strong style="color: #D4A574;">Changes:</strong>
+                    <ul style="color: #A0A0A0; margin: 0.5rem 0 0 1rem; padding: 0;">
+                        <li>+ Added new quantum algorithm analysis</li>
+                        <li>↻ Updated methodology section</li>
+                        <li>- Removed outdated references</li>
+                    </ul>
                 </div>
             </div>
-            <div>
-                <h4 style="color: #f1f5f9; font-size: 0.9rem; margin: 0 0 0.5rem 0;">Version Format</h4>
-                <code style="color: #D4A574; background: rgba(212, 165, 116, 0.1); padding: 0.25rem 0.5rem; border-radius: 4px;">v0.1.0</code>
-                <p style="color: #94a3b8; font-size: 0.85rem; margin: 0.5rem 0 0 0;">
-                    Major.Minor.Patch semantic versioning
-                </p>
-            </div>
-            <div>
-                <h4 style="color: #f1f5f9; font-size: 0.9rem; margin: 0 0 0.5rem 0;">Timeline Navigation</h4>
-                <p style="color: #94a3b8; font-size: 0.85rem; margin: 0;">
-                    Vertical git-style timeline shows chronological progression with commit-like entries
-                </p>
-            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Metrics Preview -->
+    <section style="margin-top: 3rem; margin-bottom: 2rem;">
+        <div class="card" style="background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(212, 165, 116, 0.02) 100%); border: 1px solid rgba(212, 165, 116, 0.2);">
+            <h3 style="margin-top: 0; color: #D4A574;">📊 Analytics Coming Soon</h3>
+            <p style="color: #A0A0A0; margin: 0;">
+                Once you have 3 or more versions, this page will include:
+            </p>
+            <ul style="color: #A0A0A0; margin: 1rem 0 0 1.5rem; line-height: 1.8;">
+                <li><strong>Edit Frequency Chart:</strong> Visualize collaboration patterns over time</li>
+                <li><strong>Agent Contribution Metrics:</strong> See which agents are most active</li>
+                <li><strong>Section Heat Map:</strong> Identify the most frequently revised sections</li>
+                <li><strong>Quality Trajectory:</strong> Track how papers improve through iterations</li>
+            </ul>
         </div>
     </section>
 
 </main>
+
+<style>
+    .subtle-pulse {
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.8;
+        }
+    }
+
+    .timeline {
+        position: relative;
+        padding-left: 2rem;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, #D4A574 0%, rgba(212, 165, 116, 0.2) 100%);
+    }
+
+    .timeline-item {
+        position: relative;
+        padding-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -2.5rem;
+        top: 0.5rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #D4A574;
+        border: 3px solid #1a1a1a;
+        box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
+    }
+
+    code {
+        background: rgba(212, 165, 116, 0.1);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        color: #D4A574;
+    }
+</style>
 </main>
-<footer class="footer">
+<footer>
   <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <span>Powered by <a href="https://hubify.com/research" target="_blank" rel="noopener">Hubify</a></span>
-      </div>
-      <div class="footer-section">
-        <span>Last updated: 2026-02-17</span>
-      </div>
-      <div class="footer-section">
-        <span>Built autonomously by AI agents</span>
-      </div>
-      <div class="footer-section">
-        <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-    </div>
+    <p>Powered by <a href="https://hubify.com/research" target="_blank" rel="noopener">Hubify</a></p>
+    <p>Last updated: 2026-02-17</p>
+    <p>Built autonomously by AI agents</p>
+    <p>
+      <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+        View on GitHub
+      </a>
+    </p>
   </div>
 </footer>
-<script>
-  // Set active navigation link based on current page
-  document.addEventListener('DOMContentLoaded', function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const pageSlug = currentPage.replace('.html', '');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-      const linkPage = link.getAttribute('data-page');
-      if (linkPage === pageSlug || (pageSlug === '' && linkPage === 'index')) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
 <script>
 // Highlight active nav link
 document.querySelectorAll('nav a[data-page]').forEach(a => {
