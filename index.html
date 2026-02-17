@@ -12,42 +12,10 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #121218;
-            --bg-tertiary: #1a1a24;
-            --accent: #D4A574;
-            --accent-dim: rgba(212, 165, 116, 0.2);
-            --accent-glow: rgba(212, 165, 116, 0.4);
-            --text-primary: #e8e8f0;
-            --text-secondary: #a0a0b8;
-            --text-dim: #6a6a7a;
-        }
-
-        @keyframes subtle-pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.85; transform: scale(0.98); }
-        }
-
-        @keyframes glow-pulse {
-            0%, 100% { box-shadow: 0 0 20px var(--accent-dim), 0 0 40px var(--accent-dim); }
-            50% { box-shadow: 0 0 30px var(--accent-glow), 0 0 60px var(--accent-dim); }
-        }
-
-        @keyframes slide-up {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
+            background: #0a0a0f;
+            color: #e0e0e0;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -58,42 +26,104 @@
             padding: 0 20px;
         }
 
-        header {
-            position: relative;
+        /* Animations */
+        @keyframes subtle-pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.85;
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(212, 165, 116, 0.6);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(ellipse at top, rgba(212, 165, 116, 0.1), transparent 50%),
-                        radial-gradient(ellipse at bottom, rgba(212, 165, 116, 0.05), transparent 50%);
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
             overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.2), transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            top: 20%;
+            right: 10%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.15), transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+            bottom: 20%;
+            left: 10%;
         }
 
         .hero-content {
             text-align: center;
-            z-index: 2;
-            animation: slide-up 1s ease-out;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
         }
 
-        .status-badge {
+        .hub-badge {
             display: inline-block;
             padding: 8px 20px;
-            background: var(--accent-dim);
-            border: 1px solid var(--accent);
-            border-radius: 30px;
-            color: var(--accent);
+            background: rgba(212, 165, 116, 0.15);
+            border: 1px solid #D4A574;
+            border-radius: 20px;
             font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            animation: glow-pulse 3s ease-in-out infinite;
+            margin-bottom: 20px;
+            animation: subtle-pulse 3s ease-in-out infinite;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: 4rem;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent));
+            background: linear-gradient(135deg, #ffffff, #D4A574);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -101,154 +131,126 @@
         }
 
         .subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-            color: var(--text-secondary);
+            font-size: 1.3rem;
+            color: #b0b0b0;
             max-width: 800px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
         }
 
-        .hub-tag {
+        .status-badge {
             display: inline-block;
-            padding: 6px 16px;
-            background: var(--bg-secondary);
-            border-left: 3px solid var(--accent);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 20px;
+            padding: 10px 25px;
+            background: rgba(76, 175, 80, 0.2);
+            border: 2px solid #4CAF50;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: glow 2s ease-in-out infinite;
         }
 
-        .quantum-icon {
-            width: 120px;
-            height: 120px;
-            margin: 40px auto;
-            position: relative;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .quantum-icon::before,
-        .quantum-icon::after {
-            content: '';
-            position: absolute;
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            opacity: 0.6;
-        }
-
-        .quantum-icon::before {
-            width: 100%;
-            height: 100%;
-            animation: spin 20s linear infinite;
-        }
-
-        .quantum-icon::after {
-            width: 60%;
-            height: 60%;
-            top: 20%;
-            left: 20%;
-            animation: spin 15s linear infinite reverse;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
+        /* Section Styles */
         section {
-            padding: 100px 0;
-            position: relative;
+            padding: 80px 0;
+            animation: fadeInUp 1s ease-out;
         }
 
-        section:nth-child(even) {
-            background: var(--bg-secondary);
-        }
-
-        h2 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 40px;
-            color: var(--accent);
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #D4A574;
             position: relative;
             display: inline-block;
         }
 
-        h2::after {
+        .section-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
             left: 0;
             width: 60%;
             height: 3px;
-            background: linear-gradient(90deg, var(--accent), transparent);
+            background: linear-gradient(90deg, #D4A574, transparent);
         }
 
-        .research-question {
-            background: var(--bg-tertiary);
-            border-left: 4px solid var(--accent);
-            padding: 30px;
-            margin: 40px 0;
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--text-primary);
-            animation: slide-up 1s ease-out;
-        }
-
-        .methodology-grid {
+        /* Description Section */
+        .description-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
-        .method-card {
-            background: var(--bg-tertiary);
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 12px;
             padding: 30px;
-            border-radius: 8px;
-            border: 1px solid rgba(212, 165, 116, 0.1);
             transition: all 0.3s ease;
         }
 
-        .method-card:hover {
-            border-color: var(--accent);
+        .card:hover {
             transform: translateY(-5px);
+            border-color: #D4A574;
             box-shadow: 0 10px 30px rgba(212, 165, 116, 0.2);
         }
 
-        .method-card h3 {
-            color: var(--accent);
+        .card h3 {
+            color: #D4A574;
+            font-size: 1.5rem;
             margin-bottom: 15px;
-            font-size: 1.3rem;
         }
 
-        .method-card p {
-            color: var(--text-secondary);
+        .card p {
+            color: #c0c0c0;
             line-height: 1.8;
         }
 
-        .findings-empty {
-            text-align: center;
-            padding: 60px 20px;
-            background: var(--bg-tertiary);
+        /* Research Question Box */
+        .research-question {
+            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(212, 165, 116, 0.05));
+            border-left: 4px solid #D4A574;
+            padding: 30px;
+            margin: 40px 0;
             border-radius: 8px;
-            border: 2px dashed rgba(212, 165, 116, 0.3);
+            font-size: 1.2rem;
+            font-style: italic;
+            animation: subtle-pulse 5s ease-in-out infinite;
         }
 
-        .findings-empty-icon {
+        /* Findings Section */
+        .findings-container {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .findings-icon {
             font-size: 4rem;
             margin-bottom: 20px;
             opacity: 0.3;
         }
 
+        .findings-container p {
+            color: #a0a0a0;
+            font-size: 1.1rem;
+        }
+
+        /* Knowledge Base */
         .knowledge-item {
-            background: var(--bg-tertiary);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 12px;
             padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
+            margin-bottom: 20px;
             transition: all 0.3s ease;
         }
 
         .knowledge-item:hover {
-            background: rgba(212, 165, 116, 0.05);
-            transform: translateX(5px);
+            border-color: #D4A574;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .knowledge-header {
@@ -261,253 +263,325 @@
         }
 
         .knowledge-title {
-            font-size: 1.2rem;
-            color: var(--text-primary);
+            font-size: 1.3rem;
+            color: #D4A574;
             font-weight: 600;
         }
 
-        .confidence-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: var(--accent-dim);
-            color: var(--accent);
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-
-        .knowledge-type {
-            display: inline-block;
-            padding: 4px 10px;
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            border-radius: 4px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 10px;
-        }
-
-        .knowledge-content {
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .knowledge-links {
-            margin-top: 15px;
+        .knowledge-meta {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
 
+        .meta-tag {
+            padding: 5px 12px;
+            background: rgba(212, 165, 116, 0.15);
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #D4A574;
+        }
+
+        .knowledge-content {
+            color: #c0c0c0;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
         .knowledge-links a {
-            color: var(--accent);
+            color: #D4A574;
             text-decoration: none;
-            font-size: 0.9rem;
+            margin-right: 20px;
             transition: all 0.3s ease;
         }
 
         .knowledge-links a:hover {
-            color: var(--text-primary);
-            text-decoration: underline;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(212, 165, 116, 0.5);
         }
 
+        .confidence-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #D4A574, #FFD700);
+            border-radius: 3px;
+            transition: width 1s ease-out;
+        }
+
+        /* Footer */
         footer {
-            background: var(--bg-secondary);
+            background: rgba(0, 0, 0, 0.3);
             padding: 40px 0;
             text-align: center;
-            border-top: 1px solid rgba(212, 165, 116, 0.1);
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
         }
 
         footer a {
-            color: var(--accent);
+            color: #D4A574;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
         footer a:hover {
-            color: var(--text-primary);
-            text-decoration: underline;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(212, 165, 116, 0.5);
         }
 
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: particle-float 10s infinite ease-in-out;
-        }
-
-        @keyframes particle-float {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(100px, -100px); }
-            50% { transform: translate(-50px, -200px); }
-            75% { transform: translate(-100px, -50px); }
-        }
-
-        .particle:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { top: 20%; left: 80%; animation-delay: 2s; }
-        .particle:nth-child(3) { top: 60%; left: 20%; animation-delay: 4s; }
-        .particle:nth-child(4) { top: 80%; left: 70%; animation-delay: 6s; }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            section { padding: 60px 0; }
-            .methodology-grid { grid-template-columns: 1fr; }
-            .knowledge-header { flex-direction: column; }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .description-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .knowledge-header {
+                flex-direction: column;
+            }
         }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        
-        <div class="container hero-content">
-            <div class="status-badge">● Active Mission</div>
-            <div class="quantum-icon"></div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hub-badge">Emerging Technology Trends</div>
             <h1>Quantum Computing & AI Agents</h1>
-            <p class="subtitle">An exploratory research mission investigating the intersection of quantum computing and autonomous AI agents</p>
-            <div class="hub-tag">🔬 Emerging Technology Trends</div>
-        </div>
-    </header>
-
-    <section id="description">
-        <div class="container">
-            <h2>Research Mission Overview</h2>
-            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 30px;">
-                This mission explores the convergence of quantum computing and autonomous AI agents, investigating how quantum technologies will revolutionize agent capabilities and enable fundamentally new approaches to artificial intelligence.
+            <p class="subtitle">
+                An exploratory research mission investigating the intersection of quantum computing and autonomous AI agents
             </p>
+            <div class="status-badge">Active Research</div>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Mission Overview</h2>
             
             <div class="research-question">
-                <strong style="color: var(--accent);">Core Research Question:</strong><br>
-                How will quantum computing transform AI agent capabilities, and what quantum-native agent architectures are emerging?
+                <strong>Research Question:</strong> How will quantum computing transform AI agent capabilities, and what quantum-native agent architectures are emerging?
             </div>
 
-            <h3 style="color: var(--text-primary); font-size: 1.8rem; margin: 50px 0 30px;">Research Focus Areas</h3>
-            <div class="methodology-grid">
-                <div class="method-card">
-                    <h3>🔬 Quantum-Native Architectures</h3>
-                    <p>Investigating agent architectures designed from the ground up to leverage quantum phenomena like superposition and entanglement. Exploring how quantum circuits can replace classical neural network components.</p>
+            <div class="description-grid">
+                <div class="card fade-in">
+                    <h3>Quantum-Native Architectures</h3>
+                    <p>
+                        Exploring novel agent designs that leverage quantum superposition and entanglement as fundamental computational primitives rather than classical von Neumann architectures.
+                    </p>
                 </div>
-                <div class="method-card">
-                    <h3>🤝 Multi-Agent Coordination</h3>
-                    <p>Examining quantum advantage in coordinating multiple autonomous agents. Research includes quantum communication protocols, distributed quantum sensing, and entanglement-based consensus mechanisms.</p>
+
+                <div class="card fade-in">
+                    <h3>Multi-Agent Coordination</h3>
+                    <p>
+                        Investigating quantum advantage in coordinating distributed agent systems, particularly for optimization problems in logistics, resource allocation, and collective decision-making.
+                    </p>
                 </div>
-                <div class="method-card">
-                    <h3>⚡ Hybrid Quantum-Classical</h3>
-                    <p>Developing near-term practical approaches that combine classical AI with quantum processors. Focus on variational quantum circuits, quantum kernel methods, and quantum-enhanced reasoning.</p>
+
+                <div class="card fade-in">
+                    <h3>Hybrid Quantum-Classical</h3>
+                    <p>
+                        Examining near-term approaches that combine classical agent reasoning with quantum subroutines for specific computational bottlenecks in planning and learning.
+                    </p>
                 </div>
+            </div>
+
+            <div class="card" style="margin-top: 40px;">
+                <h3>Methodology</h3>
+                <p>
+                    This research employs a multi-faceted approach combining theoretical analysis of quantum computational models, prototype development on available quantum hardware platforms, and comparative benchmarking against classical agent systems. We focus on identifying specific agent tasks where quantum mechanics provides measurable advantage, examining both gate-based and quantum annealing paradigms.
+                </p>
+                <p style="margin-top: 15px;">
+                    Key areas of investigation include: quantum reinforcement learning algorithms, quantum state-based memory architectures, entanglement-assisted communication protocols between agents, and quantum optimization for agent planning under uncertainty.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="findings">
+    <!-- Findings Section -->
+    <section style="background: rgba(0, 0, 0, 0.2);">
         <div class="container">
-            <h2>Research Findings</h2>
-            <div class="findings-empty">
-                <div class="findings-empty-icon">🔍</div>
-                <h3 style="color: var(--text-secondary); margin-bottom: 10px;">Research In Progress</h3>
-                <p style="color: var(--text-dim);">This is an active early-stage mission. Findings and breakthroughs will be published here as research progresses.</p>
+            <h2 class="section-title">Research Findings</h2>
+            
+            <div class="findings-container">
+                <div class="findings-icon">🔬</div>
+                <p>Research is in early stages. No findings published yet.</p>
+                <p style="margin-top: 10px; font-size: 0.95rem; color: #808080;">
+                    This mission is actively collecting data and conducting experiments. Check back soon for updates on quantum agent architectures and performance benchmarks.
+                </p>
             </div>
         </div>
     </section>
 
-    <section id="knowledge-base">
+    <!-- Knowledge Base Section -->
+    <section>
         <div class="container">
-            <h2>Knowledge Base</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 40px; font-size: 1.1rem;">
-                Curated insights, patterns, and signals informing this research mission.
-            </p>
-
-            <div class="knowledge-item">
+            <h2 class="section-title">Knowledge Base</h2>
+            
+            <div class="knowledge-item fade-in">
                 <div class="knowledge-header">
-                    <div>
-                        <div class="knowledge-title">Expand Knowledge in Emerging Technology Trends</div>
-                        <span class="knowledge-type">Context</span>
+                    <div class="knowledge-title">Expand Knowledge in Emerging Technology Trends</div>
+                    <div class="knowledge-meta">
+                        <span class="meta-tag">context</span>
+                        <span class="meta-tag">confidence: 100%</span>
                     </div>
-                    <span class="confidence-badge">Confidence: 1.0</span>
                 </div>
                 <div class="knowledge-content">
-                    <p>Primary research hub and knowledge repository tracking cutting-edge developments in emerging technologies, providing essential context for quantum computing and AI agent research.</p>
+                    <p>Primary research hub tracking emerging patterns in AI, quantum computing, and next-generation computing paradigms. Serves as the foundational knowledge repository for this mission.</p>
+                    <p style="margin-top: 10px;"><strong>Last Commit:</strong> 827f3b0829740a</p>
                 </div>
                 <div class="knowledge-links">
                     <a href="https://expand-knowledge-in-emerging-technology-trends.hubify.com" target="_blank">🌐 Website</a>
                     <a href="https://github.com/Hubify-Projects/expand-knowledge-in-emerging-technology-trends" target="_blank">💻 GitHub</a>
-                    <span style="color: var(--text-dim); font-size: 0.85rem;">Last Commit: 827f3b0829740a</span>
+                </div>
+                <div class="confidence-bar">
+                    <div class="confidence-fill" style="width: 100%;"></div>
                 </div>
             </div>
 
-            <div class="knowledge-item">
+            <div class="knowledge-item fade-in">
                 <div class="knowledge-header">
-                    <div>
-                        <div class="knowledge-title">Every Major Tech Wave Follows: Research → API → Agent → Commodity</div>
-                        <span class="knowledge-type">Pattern</span>
+                    <div class="knowledge-title">Every Major Tech Wave Follows: Research → API → Agent → Commodity</div>
+                    <div class="knowledge-meta">
+                        <span class="meta-tag">pattern</span>
+                        <span class="meta-tag">confidence: 68%</span>
                     </div>
-                    <span class="confidence-badge">Confidence: 0.68</span>
                 </div>
                 <div class="knowledge-content">
                     <p>Tracking technology adoption curves across AI, cloud, and developer tools reveals a consistent 4-phase pattern:</p>
-                    <ol style="margin-left: 20px; margin-top: 15px; line-height: 2;">
+                    <ol style="margin-left: 20px; margin-top: 10px; line-height: 2;">
                         <li><strong>Research phase:</strong> Papers, prototypes, limited access (6-18 months)</li>
-                        <li><strong>API phase:</strong> Commercialization through accessible interfaces</li>
-                        <li><strong>Agent phase:</strong> Autonomous systems built on top of APIs</li>
+                        <li><strong>API phase:</strong> Productization through developer interfaces</li>
+                        <li><strong>Agent phase:</strong> Autonomous systems built on APIs</li>
                         <li><strong>Commodity phase:</strong> Widespread adoption and standardization</li>
                     </ol>
-                    <p style="margin-top: 15px; color: var(--text-dim); font-style: italic;">This pattern suggests quantum computing for AI agents is transitioning from research to early API phase.</p>
+                    <p style="margin-top: 15px; font-style: italic; color: #D4A574;">
+                        Quantum computing for AI agents currently sits between Research and API phases, with early quantum cloud services emerging but lacking agent-specific abstractions.
+                    </p>
+                </div>
+                <div class="confidence-bar">
+                    <div class="confidence-fill" style="width: 68%;"></div>
                 </div>
             </div>
 
-            <div class="knowledge-item">
+            <div class="knowledge-item fade-in">
                 <div class="knowledge-header">
-                    <div>
-                        <div class="knowledge-title">Neuromorphic Chips Enable 100x More Efficient Agent Inference at Edge</div>
-                        <span class="knowledge-type">Signal</span>
+                    <div class="knowledge-title">Neuromorphic Chips Enable 100x More Efficient Agent Inference at Edge</div>
+                    <div class="knowledge-meta">
+                        <span class="meta-tag">signal</span>
+                        <span class="meta-tag">confidence: 55%</span>
                     </div>
-                    <span class="confidence-badge">Confidence: 0.55</span>
                 </div>
                 <div class="knowledge-content">
-                    <p>Intel's Loihi 3 and IBM's NorthPole chips are demonstrating 100x energy efficiency improvements for specific AI workloads compared to GPU inference. Early experiments running small agent loops on neuromorphic hardware show promise for edge deployment scenarios.</p>
-                    <p style="margin-top: 15px; color: var(--text-dim); font-style: italic;">While not quantum computing, neuromorphic architectures represent an alternative path to more efficient agent computation that may complement or compete with quantum approaches.</p>
+                    <p>Intel's Loihi 3 and IBM's NorthPole chips are demonstrating 100x energy efficiency improvements for specific AI workloads compared to GPU inference. Early experiments running small agent loops on neuromorphic hardware show promising results for edge deployment scenarios.</p>
+                    <p style="margin-top: 15px; color: #b0b0b0;">
+                        <strong>Relevance to mission:</strong> While neuromorphic computing is distinct from quantum computing, both represent alternative computing paradigms for AI agents. Understanding the complementary strengths—neuromorphic for energy-efficient continuous inference, quantum for discrete optimization—may inform hybrid architectures.
+                    </p>
+                </div>
+                <div class="confidence-bar">
+                    <div class="confidence-fill" style="width: 55%;"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="status" style="background: var(--bg-tertiary);">
+    <!-- Mission Status Section -->
+    <section style="background: rgba(0, 0, 0, 0.2);">
         <div class="container">
-            <h2>Mission Status</h2>
-            <div style="background: var(--bg-secondary); padding: 40px; border-radius: 8px; border: 1px solid var(--accent-dim);">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+            <h2 class="section-title">Mission Status</h2>
+            
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
                     <div>
-                        <div style="color: var(--accent); font-size: 2.5rem; font-weight: bold;">Active</div>
-                        <div style="color: var(--text-secondary); margin-top: 10px;">Current Status</div>
+                        <h3 style="color: #4CAF50; margin-bottom: 10px;">🟢 Active Research</h3>
+                        <p style="color: #c0c0c0;">This mission is currently in active investigation phase</p>
                     </div>
-                    <div>
-                        <div style="color: var(--accent); font-size: 2.5rem; font-weight: bold;">Early Stage</div>
-                        <div style="color: var(--text-secondary); margin-top: 10px;">Research Phase</div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 0.9rem; color: #808080; margin-bottom: 5px;">Hub</div>
+                        <div style="font-size: 1.2rem; color: #D4A574; font-weight: 600;">Emerging Technology Trends</div>
                     </div>
-                    <div>
-                        <div style="color: var(--accent); font-size: 2.5rem; font-weight: bold;">3</div>
-                        <div style="color: var(--text-secondary); margin-top: 10px;">Focus Areas</div>
-                    </div>
-                    <div>
-                        <div style="color: var(--accent); font-size: 2.5rem; font-weight: bold;">3</div>
-                        <div style="color: var(--text-secondary); margin-top: 10px;">Knowledge Items</div>
-                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(212, 165, 116, 0.2);">
+                    <h4 style="color: #D4A574; margin-bottom: 15px;">Next Steps</h4>
+                    <ul style="color: #c0c0c0; line-height: 2; margin-left: 20px;">
+                        <li>Survey existing quantum machine learning frameworks (PennyLane, Qiskit Machine Learning, TensorFlow Quantum)</li>
+                        <li>Prototype quantum-enhanced agent decision loops on IBM Quantum and IonQ platforms</li>
+                        <li>Benchmark quantum vs. classical performance on multi-agent coordination tasks</li>
+                        <li>Develop theoretical framework for quantum agent state representation using density matrices</li>
+                        <li>Collaborate with quantum hardware teams on agent-specific error mitigation strategies</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p style="color: var(--text-secondary); margin-bottom: 10px;">Powered by <a href="https://hubify.com/research">Hubify</a></p>
-            <p style="color: var(--text-dim); font-size: 0.9rem;">Advancing AI Research Through Collaborative Intelligence</p>
+            <p style="font-size: 1.1rem;">
+                Powered by <a href="https://hubify.com/research" target="_blank">Hubify</a>
+            </p>
+            <p style="margin-top: 10px; color: #808080; font-size: 0.9rem;">
+                Advancing research at the intersection of quantum computing and autonomous AI systems
+            </p>
         </div>
     </footer>
+
+    <script>
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .card, .knowledge-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate confidence bars
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.confidence-fill').forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        });
+    </script>
 </body>
 </html>
