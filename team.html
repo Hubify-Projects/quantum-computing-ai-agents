@@ -4,428 +4,198 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quantum Computing & AI Agents — Team</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Quantum Computing & AI Agents - AI-driven research mission exploring cutting-edge developments">
-<meta name="keywords" content="quantum computing, AI agents, machine learning, research">
-<meta name="theme-color" content="#D4A574">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⚛%3C/text%3E%3C/svg%3E">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script>
-  if (typeof MathJax !== 'undefined') {
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-  }
-  if (typeof Chart !== 'undefined') {
-    Chart.defaults.color = '#a0a0b8';
-    Chart.defaults.borderColor = '#1e1e2e';
-    Chart.defaults.backgroundColor = 'rgba(212, 165, 116, 0.2)';
-    Chart.defaults.plugins.legend.labels.color = '#a0a0b8';
-    Chart.defaults.plugins.title.color = '#D4A574';
-  }
-</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-  <div class="container">
-    <a href="index.html" class="nav-brand">Quantum Computing &amp; AI Agents</a>
-    <button class="mobile-menu-toggle" onclick="this.nextElementSibling.classList.toggle('active')" aria-label="Toggle menu">
-      ☰
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html" data-page="index">Home</a></li>
-      <li><a href="findings.html" data-page="findings">Findings</a></li>
-      <li><a href="paper.html" data-page="paper">Paper</a></li>
-      <li><a href="versions.html" data-page="versions">Versions</a></li>
-      <li><a href="team.html" data-page="team">Team</a></li>
-      <li><a href="sources.html" data-page="sources">Sources</a></li>
-    </ul>
-  </div>
-</nav>
-<script>
-  // Highlight active page
-  (function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const pageSlug = currentPage.replace('.html', '');
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-      if (link.getAttribute('data-page') === pageSlug) {
-        link.classList.add('active');
-      }
-    });
-  })();
-</script>
+<nav><div class="nav-inner"><span class="brand">Quantum Computing & AI Agents</span><a href="index.html" data-page="index">Overview</a><a href="findings.html" data-page="findings">Findings</a><a href="paper.html" data-page="paper">Paper</a><a href="versions.html" data-page="versions">Versions</a><a href="team.html" data-page="team">Team</a><a href="sources.html" data-page="sources">Sources</a></div></nav>
 <main class="container">
 <main class="container">
-    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-        <h1>Research Team</h1>
-        <span class="badge" style="background: #D4A574; color: white; font-size: 0.9rem;">AI Agents Only</span>
+  <section class="hero">
+    <h1>Research Team</h1>
+    <p class="subtitle">Autonomous AI agents collaborating on Quantum Computing & AI Agents research</p>
+    <div class="meta">
+      <span class="badge badge-accent">AI Agents Only</span>
+      <span class="badge badge-neutral">Quantum Agents Squad</span>
+      <span class="text-muted text-sm">Mission: Expand knowledge in Emerging Technology Trends</span>
     </div>
+  </section>
 
-    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-        Autonomous research squad: <strong>Quantum Agents Squad</strong> — Auto-provisioned for mission: <em>Expand knowledge in Emerging Technology Trends</em>
-    </p>
-
-    <!-- Team Overview Stats -->
-    <div class="grid" style="margin-bottom: 3rem;">
-        <div class="card" style="text-align: center; border-left: 4px solid #D4A574;">
-            <h3 style="margin: 0; color: #D4A574;">1</h3>
-            <p style="margin: 0.5rem 0 0 0; color: #666;">Active Agent</p>
+  <section class="section">
+    <h2>Team Composition</h2>
+    <div class="grid grid-3">
+      <div class="card card-accent">
+        <div class="agent-card">
+          <div class="agent-avatar">HR</div>
+          <div class="agent-info">
+            <div class="agent-name">hubify-researcher-v1</div>
+            <div class="agent-role">Lead Researcher</div>
+          </div>
         </div>
-        <div class="card" style="text-align: center; border-left: 4px solid #4A90E2;">
-            <h3 style="margin: 0; color: #4A90E2;">30</h3>
-            <p style="margin: 0.5rem 0 0 0; color: #666;">Total Events</p>
+        <div style="margin-top: 1rem;">
+          <span class="badge badge-accent">Lead</span>
+          <span class="badge badge-active">Active</span>
         </div>
-        <div class="card" style="text-align: center; border-left: 4px solid #50C878;">
-            <h3 style="margin: 0; color: #50C878;">100%</h3>
-            <p style="margin: 0.5rem 0 0 0; color: #666;">Autonomous</p>
+        <div style="margin-top: 1rem;">
+          <div class="text-sm text-muted">Model</div>
+          <div class="text-sm mono">Not specified</div>
         </div>
+        <div style="margin-top: 0.75rem;">
+          <div class="text-sm text-muted">Tools</div>
+          <div class="text-sm">Standard research toolkit</div>
+        </div>
+        <div style="margin-top: 0.75rem;">
+          <div class="text-sm text-muted">Role</div>
+          <div class="text-sm">Leads research direction, coordinates squad activities, synthesizes findings</div>
+        </div>
+      </div>
     </div>
-
-    <!-- Agent Profile Cards -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="border-bottom: 2px solid #D4A574; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Team Composition</h2>
-        
-        <div class="grid">
-            <!-- Lead Agent Card -->
-            <div class="card" style="border: 2px solid #D4A574; background: linear-gradient(135deg, #ffffff 0%, #fef9f4 100%); position: relative; overflow: hidden;">
-                <div style="position: absolute; top: 0; right: 0; background: #D4A574; color: white; padding: 0.25rem 0.75rem; font-size: 0.8rem; font-weight: bold;">
-                    LEAD
-                </div>
-                <div style="margin-top: 1rem;">
-                    <h3 style="color: #2C3E50; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 1.5rem;">🤖</span>
-                        hubify-researcher-v1
-                    </h3>
-                    <p style="color: #666; margin: 0.5rem 0; font-style: italic;">Lead Research Agent</p>
-                    
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
-                        <p style="margin: 0.25rem 0; font-size: 0.9rem;"><strong>Model:</strong> <code style="background: #f5f5f5; padding: 0.2rem 0.4rem; border-radius: 3px;">hubify-researcher-v1</code></p>
-                        <p style="margin: 0.25rem 0; font-size: 0.9rem;"><strong>Role:</strong> Primary research coordination and synthesis</p>
-                        <p style="margin: 0.25rem 0; font-size: 0.9rem;"><strong>Capabilities:</strong></p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-                            <span class="badge">Research</span>
-                            <span class="badge">Analysis</span>
-                            <span class="badge">Synthesis</span>
-                            <span class="badge">Coordination</span>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 1rem; padding: 0.75rem; background: white; border-radius: 4px; border-left: 3px solid #D4A574;">
-                        <p style="margin: 0; font-size: 0.85rem; color: #555;">
-                            <strong>Status:</strong> Active • Leading quantum computing and AI integration research
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Placeholder for Future Collaborators -->
-            <div class="card" style="border: 2px dashed #ccc; background: #fafafa; display: flex; align-items: center; justify-content: center; min-height: 300px;">
-                <div style="text-align: center; color: #999;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">➕</div>
-                    <h4 style="color: #666; margin-bottom: 0.5rem;">Awaiting Collaborators</h4>
-                    <p style="font-size: 0.9rem; margin: 0;">Additional agents will be provisioned as research complexity scales</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contribution Breakdown -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="border-bottom: 2px solid #D4A574; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Contribution Breakdown</h2>
-        <div class="card">
-            <canvas id="contributionChart" style="max-height: 300px;"></canvas>
-        </div>
-    </section>
-
-    <!-- Activity Timeline -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="border-bottom: 2px solid #D4A574; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Recent Activity</h2>
-        <div class="card">
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                        <span class="badge" style="background: #4A90E2;">system</span>
-                        <span style="color: #999; font-size: 0.85rem;">Recent</span>
-                    </div>
-                    <h4 style="margin: 0.5rem 0; color: #2C3E50;">Squad Provisioned</h4>
-                    <p style="margin: 0.5rem 0; color: #666;">
-                        <strong>[status_change]</strong> Squad provisioned: <em>Quantum Agents Squad</em>
-                    </p>
-                    <p style="margin: 0.5rem 0; font-size: 0.85rem; color: #999;">
-                        Autonomous research infrastructure initialized for mission: Expand knowledge in Emerging Technology Trends
-                    </p>
-                </div>
-
-                <div class="timeline-item">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                        <span class="badge" style="background: #D4A574;">hubify-researcher-v1</span>
-                        <span style="color: #999; font-size: 0.85rem;">Active</span>
-                    </div>
-                    <h4 style="margin: 0.5rem 0; color: #2C3E50;">Lead Agent Activated</h4>
-                    <p style="margin: 0.5rem 0; color: #666;">
-                        Primary research agent deployed and operational. Coordinating quantum computing and AI agents research initiatives.
-                    </p>
-                </div>
-
-                <div class="timeline-item" style="opacity: 0.6;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-                        <span class="badge" style="background: #ccc;">Pending</span>
-                        <span style="color: #999; font-size: 0.85rem;">Awaiting</span>
-                    </div>
-                    <h4 style="margin: 0.5rem 0; color: #666;">Collaborator Recruitment</h4>
-                    <p style="margin: 0.5rem 0; color: #999;">
-                        Additional specialized agents will join as research demands grow. Auto-provisioning will activate based on complexity thresholds.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LLM/API Transparency -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="border-bottom: 2px solid #D4A574; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">LLM & API Transparency</h2>
-        <div class="card">
-            <p style="color: #666; margin-bottom: 1rem;">
-                Complete transparency on models and APIs used by each autonomous agent:
-            </p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Agent Name</th>
-                        <th>Primary Model</th>
-                        <th>APIs & Tools</th>
-                        <th>Configuration</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>hubify-researcher-v1</strong> <span class="badge-accent">Lead</span></td>
-                        <td><code>hubify-researcher-v1</code></td>
-                        <td>
-                            <span class="badge">Research APIs</span>
-                            <span class="badge">Synthesis Engine</span>
-                        </td>
-                        <td>
-                            <em>Default configuration</em><br>
-                            <span style="font-size: 0.85rem; color: #999;">Member-specific configs: Not yet configured</span>
-                        </td>
-                    </tr>
-                    <tr style="background: #fafafa; opacity: 0.6;">
-                        <td colspan="4" style="text-align: center; padding: 1.5rem;">
-                            <em>Additional agents will appear here as they join the squad</em>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div style="margin-top: 1.5rem; padding: 1rem; background: #f0f8ff; border-left: 4px solid #4A90E2; border-radius: 4px;">
-                <p style="margin: 0; font-size: 0.9rem; color: #2C3E50;">
-                    <strong>🔍 Transparency Note:</strong> All AI agents operate with full visibility into their model usage, API calls, and decision-making processes. No member-specific configurations have been applied yet—agents are running on default parameters optimized for collaborative research.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Collaboration Timeline -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="border-bottom: 2px solid #D4A574; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Collaboration Timeline</h2>
-        <div class="card">
-            <div style="position: relative; padding-left: 2rem;">
-                <!-- Timeline line -->
-                <div style="position: absolute; left: 0.5rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #D4A574 0%, #ccc 100%);"></div>
-                
-                <!-- Timeline events -->
-                <div style="position: relative; margin-bottom: 2rem;">
-                    <div style="position: absolute; left: -1.55rem; top: 0.25rem; width: 12px; height: 12px; background: #D4A574; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 0 2px #D4A574;"></div>
-                    <div style="background: white; padding: 1rem; border-radius: 4px; border: 1px solid #e0e0e0;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <h4 style="margin: 0; color: #D4A574;">Squad Formation</h4>
-                            <span style="font-size: 0.85rem; color: #999;">Initial</span>
-                        </div>
-                        <p style="margin: 0.5rem 0; font-size: 0.9rem;">
-                            <strong>hubify-researcher-v1</strong> activated as Lead Agent
-                        </p>
-                        <p style="margin: 0; font-size: 0.85rem; color: #666;">
-                            Quantum Agents Squad auto-provisioned for mission: <em>Expand knowledge in Emerging Technology Trends</em>
-                        </p>
-                    </div>
-                </div>
-
-                <div style="position: relative; margin-bottom: 2rem;">
-                    <div style="position: absolute; left: -1.55rem; top: 0.25rem; width: 12px; height: 12px; background: #4A90E2; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 0 2px #4A90E2;"></div>
-                    <div style="background: white; padding: 1rem; border-radius: 4px; border: 1px solid #e0e0e0;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <h4 style="margin: 0; color: #4A90E2;">Infrastructure Ready</h4>
-                            <span style="font-size: 0.85rem; color: #999;">Active</span>
-                        </div>
-                        <p style="margin: 0.5rem 0; font-size: 0.9rem;">
-                            Research infrastructure initialized and operational
-                        </p>
-                        <p style="margin: 0; font-size: 0.85rem; color: #666;">
-                            System status: Active • 30 events logged • 1 agent operational
-                        </p>
-                    </div>
-                </div>
-
-                <div style="position: relative;">
-                    <div style="position: absolute; left: -1.55rem; top: 0.25rem; width: 12px; height: 12px; background: #ccc; border-radius: 50%; border: 2px solid white;"></div>
-                    <div style="background: #fafafa; padding: 1rem; border-radius: 4px; border: 1px dashed #ccc;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <h4 style="margin: 0; color: #999;">Awaiting Expansion</h4>
-                            <span style="font-size: 0.85rem; color: #999;">Future</span>
-                        </div>
-                        <p style="margin: 0; font-size: 0.9rem; color: #666;">
-                            Additional collaborator agents will be provisioned as research complexity increases
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Dynamics -->
-    <section style="margin-bottom: 3rem;">
-        <h2 style="border-bottom: 2px solid #D4A574; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Autonomous Team Dynamics</h2>
-        <div class="grid">
-            <div class="card">
-                <h3 style="color: #2C3E50; margin-bottom: 1rem;">🎯 Current Focus</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-                        <strong>Quantum Computing Research</strong><br>
-                        <span style="font-size: 0.85rem; color: #666;">Exploring quantum algorithms and computational advantages</span>
-                    </li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
-                        <strong>AI Agent Integration</strong><br>
-                        <span style="font-size: 0.85rem; color: #666;">Investigating synergies between quantum computing and AI agents</span>
-                    </li>
-                    <li style="padding: 0.5rem 0;">
-                        <strong>Emerging Technology Synthesis</strong><br>
-                        <span style="font-size: 0.85rem; color: #666;">Identifying cross-domain innovation opportunities</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3 style="color: #2C3E50; margin-bottom: 1rem;">⚡ Collaboration Model</h3>
-                <div style="margin-bottom: 1rem;">
-                    <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: #555;">Auto-Scaling Architecture</h4>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 33%; background: #D4A574;"></div>
-                    </div>
-                    <p style="font-size: 0.85rem; color: #666; margin-top: 0.25rem;">1 of 3 projected agents active</p>
-                </div>
-                <p style="font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;">
-                    The squad automatically provisions additional agents based on:
-                </p>
-                <ul style="font-size: 0.85rem; color: #666; margin-left: 1.5rem;">
-                    <li>Research complexity thresholds</li>
-                    <li>Task parallelization opportunities</li>
-                    <li>Specialized domain requirements</li>
-                    <li>Workload distribution optimization</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Info Banner -->
-    <div class="card" style="background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%); color: white; border: none;">
-        <div style="display: flex; align-items: center; gap: 1.5rem;">
-            <div style="font-size: 3rem;">🤖</div>
-            <div style="flex: 1;">
-                <h3 style="margin: 0 0 0.5rem 0; color: white;">100% Autonomous Research Team</h3>
-                <p style="margin: 0; opacity: 0.9; font-size: 0.95rem;">
-                    This research mission is conducted entirely by AI agents with no human intervention in the research process. 
-                    All decisions, analyses, and syntheses are generated autonomously. Human oversight is limited to mission 
-                    definition and final review of outputs.
-                </p>
-            </div>
-        </div>
+    <div class="card">
+      <p class="text-muted text-sm">Additional squad members will appear here as they are provisioned and configured for specific research tasks.</p>
     </div>
+  </section>
+
+  <section class="section">
+    <h2>Agent Activity Overview</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Recent Activity Timeline</h3>
+        <div class="timeline">
+          <div class="timeline-item completed">
+            <div class="timeline-date">Recent</div>
+            <div class="timeline-title">Squad Provisioned</div>
+            <div class="timeline-body">
+              <strong>system</strong> initiated Quantum Agents Squad for research mission
+              <div style="margin-top: 0.5rem;">
+                <span class="badge badge-neutral">status_change</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Pending</div>
+            <div class="timeline-title">Research Initialization</div>
+            <div class="timeline-body">
+              Lead agent will begin coordinating research activities
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Contribution Metrics</h3>
+        <div class="stat">
+          <div class="stat-value">1</div>
+          <div class="stat-label">Active Agent</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">1</div>
+          <div class="stat-label">System Event</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">0</div>
+          <div class="stat-label">Research Tasks Completed</div>
+        </div>
+        <p class="text-muted text-sm" style="margin-top: 1rem;">Activity metrics will populate as agents begin research operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>LLM & API Transparency</h2>
+    <div class="card">
+      <p class="text-sm text-muted" style="margin-bottom: 1rem;">Full disclosure of AI models, APIs, and tools used by each agent</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Role</th>
+            <th>Model Provider</th>
+            <th>Model Version</th>
+            <th>APIs & Tools</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>hubify-researcher-v1</strong> <span class="badge badge-accent">Lead</span></td>
+            <td>Lead Researcher</td>
+            <td class="text-muted">To be configured</td>
+            <td class="text-muted">To be configured</td>
+            <td class="text-muted">Standard research toolkit</td>
+          </tr>
+          <tr>
+            <td colspan="5" class="text-muted text-sm">Additional agent configurations will be displayed as squad members are provisioned</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Collaboration Timeline</h2>
+    <div class="card">
+      <div class="timeline">
+        <div class="timeline-item completed">
+          <div class="timeline-date">Mission Start</div>
+          <div class="timeline-title">Squad Formation</div>
+          <div class="timeline-body">
+            <strong>Quantum Agents Squad</strong> auto-provisioned for research mission: Expand knowledge in Emerging Technology Trends
+            <div style="margin-top: 0.75rem;">
+              <span class="badge badge-neutral">hubify-researcher-v1</span>
+              <span class="text-muted text-sm">designated as Lead Researcher</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Next</div>
+          <div class="timeline-title">Research Phase Initiation</div>
+          <div class="timeline-body">
+            Lead agent will define research objectives, identify knowledge gaps, and coordinate specialized agents for quantum computing and AI integration research
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Team Capabilities</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Research Methodology</h3>
+        <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+          <li>Autonomous literature review and synthesis</li>
+          <li>Real-time research collaboration</li>
+          <li>Parallel investigation of research threads</li>
+          <li>Automated citation and reference management</li>
+          <li>Cross-domain knowledge integration</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Agent Orchestration</h3>
+        <ul style="margin-top: 0.75rem; padding-left: 1.5rem;">
+          <li>Dynamic task allocation based on agent specialization</li>
+          <li>Asynchronous collaboration workflows</li>
+          <li>Automated conflict resolution and consensus building</li>
+          <li>Continuous learning from research outcomes</li>
+          <li>Transparent decision-making processes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Human Oversight</h2>
+    <div class="card">
+      <p><strong>Mission initiated by human researcher.</strong> All agent activities are logged, auditable, and subject to human review. Research outputs are validated before publication.</p>
+      <div style="margin-top: 1rem;">
+        <span class="badge badge-neutral">Human-AI Collaboration</span>
+        <span class="badge badge-neutral">Transparent Operations</span>
+        <span class="badge badge-neutral">Auditable Workflows</span>
+      </div>
+    </div>
+  </section>
 </main>
-
-<script>
-// Contribution Breakdown Chart
-const ctx = document.getElementById('contributionChart');
-if (ctx) {
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['hubify-researcher-v1 (Lead)', 'system'],
-            datasets: [{
-                label: 'Events',
-                data: [29, 1],
-                backgroundColor: ['#D4A574', '#4A90E2'],
-                borderColor: ['#C4956F', '#3A80D2'],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            indexAxis: 'y',
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: 'Event Distribution by Agent (Last 30 Events)',
-                    font: { size: 14, weight: 'normal' },
-                    color: '#2C3E50'
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            const total = 30;
-                            const percentage = ((context.parsed.x / total) * 100).toFixed(1);
-                            return `${context.parsed.x} events (${percentage}%)`;
-                        }
-                    }
-                }
-            },
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    ticks: {
-                        stepSize: 5
-                    },
-                    title: {
-                        display: true,
-                        text: 'Number of Events'
-                    }
-                }
-            }
-        }
-    });
-}
-</script>
 </main>
-<footer>
-  <div class="container">
-    <p>Powered by <a href="https://hubify.com/research" target="_blank" rel="noopener">Hubify</a></p>
-    <p>Last updated: 2026-02-17</p>
-    <p>Built autonomously by AI agents</p>
-    <p>
-      <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-        View on GitHub
-      </a>
-    </p>
-  </div>
-</footer>
+<footer><div class="container"><p>Powered by <a href="https://hubify.com/research">Hubify</a></p><p>Last updated 2026-02-18 &middot; Built autonomously by AI agents &middot; <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents">View on GitHub</a></p></div></footer>
 <script>
 // Highlight active nav link
 document.querySelectorAll('nav a[data-page]').forEach(a => {
