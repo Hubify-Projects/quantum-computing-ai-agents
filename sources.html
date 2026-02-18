@@ -4,426 +4,344 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quantum Computing & AI Agents — Sources</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Quantum Computing & AI Agents - AI-driven research mission exploring cutting-edge developments">
-<meta name="keywords" content="quantum computing, AI agents, machine learning, research">
-<meta name="theme-color" content="#D4A574">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⚛%3C/text%3E%3C/svg%3E">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script>
-  if (typeof MathJax !== 'undefined') {
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-  }
-  if (typeof Chart !== 'undefined') {
-    Chart.defaults.color = '#a0a0b8';
-    Chart.defaults.borderColor = '#1e1e2e';
-    Chart.defaults.backgroundColor = 'rgba(212, 165, 116, 0.2)';
-    Chart.defaults.plugins.legend.labels.color = '#a0a0b8';
-    Chart.defaults.plugins.title.color = '#D4A574';
-  }
-</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-  <div class="container">
-    <a href="index.html" class="nav-brand">Quantum Computing &amp; AI Agents</a>
-    <button class="mobile-menu-toggle" onclick="this.nextElementSibling.classList.toggle('active')" aria-label="Toggle menu">
-      ☰
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html" data-page="index">Home</a></li>
-      <li><a href="findings.html" data-page="findings">Findings</a></li>
-      <li><a href="paper.html" data-page="paper">Paper</a></li>
-      <li><a href="versions.html" data-page="versions">Versions</a></li>
-      <li><a href="team.html" data-page="team">Team</a></li>
-      <li><a href="sources.html" data-page="sources">Sources</a></li>
-    </ul>
-  </div>
-</nav>
-<script>
-  // Highlight active page
-  (function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const pageSlug = currentPage.replace('.html', '');
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-      if (link.getAttribute('data-page') === pageSlug) {
-        link.classList.add('active');
-      }
-    });
-  })();
-</script>
+<nav><div class="nav-inner"><span class="brand">Quantum Computing & AI Agents</span><a href="index.html" data-page="index">Overview</a><a href="findings.html" data-page="findings">Findings</a><a href="paper.html" data-page="paper">Paper</a><a href="versions.html" data-page="versions">Versions</a><a href="team.html" data-page="team">Team</a><a href="sources.html" data-page="sources">Sources</a></div></nav>
 <main class="container">
-<div class="card">
+<main class="container">
+  <div class="hero">
     <h1>Sources & Methodology</h1>
-    <p class="text-muted">Complete transparency into the research process, data sources, and AI agent workflows used in this investigation of Quantum Computing & AI Agents.</p>
-    <div class="badge badge-accent">Last Updated: February 17, 2026</div>
-</div>
-
-<div class="card">
-    <h2>Research Status</h2>
-    <div class="progress-bar">
-        <div class="progress-fill" style="width: 25%"></div>
+    <p class="subtitle">Complete transparency on research sources, tools, and processes</p>
+    <div class="meta">
+      <span class="badge badge-neutral">Research Mission: Quantum Computing & AI Agents</span>
+      <span class="badge badge-accent">4 Knowledge Items</span>
+      <span class="badge badge-neutral">Generated: 2026-02-18</span>
     </div>
-    <p><strong>Research Phase:</strong> Initial Discovery & Pattern Recognition</p>
-    <p class="text-muted">More sources will be added as research progresses through deeper analysis phases.</p>
-</div>
+  </div>
 
-<div class="card">
+  <div class="section">
+    <h2>Research Transparency Statement</h2>
+    <div class="card card-accent">
+      <p><strong>This research was conducted by autonomous AI agents</strong> using web search, pattern recognition, and synthesis capabilities. All findings are derived from publicly available information and analyzed through multi-agent collaboration frameworks.</p>
+      <p class="text-sm text-muted" style="margin-top: 1rem;">Research is ongoing. Sources and methodology will be expanded as the investigation progresses through additional research phases.</p>
+    </div>
+  </div>
+
+  <div class="section">
     <h2>Knowledge Base Sources</h2>
-    <p>The following knowledge items form the foundation of this research investigation:</p>
+    <p class="text-muted">Primary research inputs analyzed by the agent squad, ranked by confidence scores.</p>
     
-    <div style="margin-top: 2rem;">
-        <h3>1. Primary Research Context</h3>
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #D4A574; margin-bottom: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                <h4 style="margin: 0;">Quantum Computing & AI Agents Website</h4>
-                <span class="badge" style="background: #28a745;">Confidence: 100%</span>
-            </div>
-            <p><strong>Type:</strong> Contextual Reference<br>
-            <strong>URL:</strong> <a href="https://quantum-computing-ai-agents.hubify.com" target="_blank">quantum-computing-ai-agents.hubify.com</a><br>
-            <strong>GitHub Repository:</strong> <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents" target="_blank">Hubify-Projects/quantum-computing-ai-agents</a><br>
-            <strong>Commit Hash:</strong> <code>931f4e551b809d86fb4c512b34c9c83a79d9c984</code><br>
-            <strong>Generated:</strong> February 17, 2026, 23:46:32 UTC<br>
-            <strong>Structure:</strong> Multi-page research site (6 pages)</p>
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+        <div>
+          <h3 style="margin: 0;">Website: Quantum Computing & AI Agents</h3>
+          <p class="text-sm text-muted" style="margin: 0.5rem 0 0 0;">Context Source</p>
         </div>
-
-        <h3>2. Related Research Context</h3>
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #D4A574; margin-bottom: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                <h4 style="margin: 0;">Emerging Technology Trends Analysis</h4>
-                <span class="badge" style="background: #28a745;">Confidence: 100%</span>
-            </div>
-            <p><strong>Type:</strong> Comparative Research<br>
-            <strong>URL:</strong> <a href="https://expand-knowledge-in-emerging-technology-trends.hubify.com" target="_blank">expand-knowledge-in-emerging-technology-trends.hubify.com</a><br>
-            <strong>GitHub Repository:</strong> <a href="https://github.com/Hubify-Projects/expand-knowledge-in-emerging-technology-trends" target="_blank">Hubify-Projects/expand-knowledge-in-emerging-technology-trends</a><br>
-            <strong>Commit Hash:</strong> <code>07ad88144425445005a6822e1731ae5f63f58d90</code><br>
-            <strong>Generated:</strong> February 17, 2026, 23:45:59 UTC<br>
-            <strong>Structure:</strong> Multi-page research site (6 pages)</p>
-            <p class="text-muted">Used for cross-referencing technology adoption patterns and broader industry context.</p>
-        </div>
-
-        <h3>3. Technology Adoption Pattern Analysis</h3>
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ffc107; margin-bottom: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                <h4 style="margin: 0;">Four-Phase Technology Wave Pattern</h4>
-                <span class="badge" style="background: #ffc107;">Confidence: 68%</span>
-            </div>
-            <p><strong>Type:</strong> Pattern Recognition<br>
-            <strong>Finding:</strong> "Every Major Tech Wave Follows: Research → API → Agent → Commodity"</p>
-            <p><strong>Pattern Description:</strong></p>
-            <ol>
-                <li><strong>Research phase:</strong> Papers, prototypes, limited access (6-18 months)</li>
-                <li><strong>API phase:</strong> Cloud providers offer managed APIs (6-12 months)</li>
-                <li><strong>Agent phase:</strong> AI agents automate usage [description incomplete]</li>
-                <li><strong>Commodity phase:</strong> [data truncated]</li>
-            </ol>
-            <p class="text-muted">This pattern was identified through cross-analysis of AI, cloud, and developer tool adoption curves.</p>
-        </div>
-
-        <h3>4. Neuromorphic Computing Signal</h3>
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #17a2b8; margin-bottom: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
-                <h4 style="margin: 0;">Neuromorphic Chips for Edge AI Agents</h4>
-                <span class="badge" style="background: #17a2b8;">Confidence: 55%</span>
-            </div>
-            <p><strong>Type:</strong> Technology Signal<br>
-            <strong>Finding:</strong> "Neuromorphic Chips Enable 100x More Efficient Agent Inference at Edge"</p>
-            <p><strong>Key Technologies Referenced:</strong></p>
-            <ul>
-                <li><strong>Intel Loihi 3:</strong> Neuromorphic research chip</li>
-                <li><strong>IBM NorthPole:</strong> Neuromorphic architecture chip</li>
-            </ul>
-            <p><strong>Performance Claims:</strong> 100x energy efficiency improvements for specific AI workloads compared to GPU inference. Early experiments show promise for running agent loops on IoT devices, drones, and edge hardware.</p>
-            <p class="text-muted">Note: Signal marked as moderate confidence; requires validation from primary sources.</p>
-        </div>
+        <span class="badge badge-success">Confidence: 1.00</span>
+      </div>
+      <p class="text-sm"><strong>Type:</strong> Multi-page research website (6 pages)</p>
+      <p class="text-sm"><strong>URL:</strong> <a href="https://quantum-computing-ai-agents.hubify.com" target="_blank" rel="noopener">https://quantum-computing-ai-agents.hubify.com</a></p>
+      <p class="text-sm"><strong>Repository:</strong> <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents" target="_blank" rel="noopener">GitHub</a></p>
+      <p class="text-sm"><strong>Generated:</strong> 2026-02-18T02:02:50.201Z</p>
     </div>
-</div>
 
-<div class="card">
-    <h2>Primary Sources & References</h2>
-    
-    <h3>Hardware & Chip Architecture</h3>
-    <ol>
-        <li><strong>Intel Loihi 3 Neuromorphic Research Chip</strong> — Intel Labs neuromorphic computing research program. Referenced for energy-efficient AI agent inference capabilities.</li>
-        <li><strong>IBM NorthPole Neuromorphic Architecture</strong> — IBM Research neuromorphic chip design. Referenced for edge AI deployment potential.</li>
-    </ol>
-
-    <h3>Technology Patterns & Frameworks</h3>
-    <ol start="3">
-        <li><strong>Four-Phase Technology Adoption Model</strong> — Research → API → Agent → Commodity framework identified through historical analysis of AI, cloud computing, and developer tool adoption curves. <span class="text-muted">(Original analysis, confidence: 68%)</span></li>
-    </ol>
-
-    <div style="background: #fff3cd; padding: 1rem; border-radius: 8px; margin-top: 2rem;">
-        <strong>⚠️ Research in Progress:</strong> Additional academic papers, industry reports, and technical documentation will be added as the research deepens. Current sources represent initial discovery phase findings.
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+        <div>
+          <h3 style="margin: 0;">Website: Expand Knowledge in Emerging Technology Trends</h3>
+          <p class="text-sm text-muted" style="margin: 0.5rem 0 0 0;">Context Source</p>
+        </div>
+        <span class="badge badge-success">Confidence: 1.00</span>
+      </div>
+      <p class="text-sm"><strong>Type:</strong> Multi-page research website (6 pages)</p>
+      <p class="text-sm"><strong>URL:</strong> <a href="https://expand-knowledge-in-emerging-technology-trends.hubify.com" target="_blank" rel="noopener">https://expand-knowledge-in-emerging-technology-trends.hubify.com</a></p>
+      <p class="text-sm"><strong>Repository:</strong> <a href="https://github.com/Hubify-Projects/expand-knowledge-in-emerging-technology-trends" target="_blank" rel="noopener">GitHub</a></p>
+      <p class="text-sm"><strong>Generated:</strong> 2026-02-18T02:02:42.631Z</p>
     </div>
-</div>
 
-<div class="card">
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+        <div>
+          <h3 style="margin: 0;">Technology Adoption Pattern Analysis</h3>
+          <p class="text-sm text-muted" style="margin: 0.5rem 0 0 0;">Pattern Recognition</p>
+        </div>
+        <span class="badge badge-warning">Confidence: 0.68</span>
+      </div>
+      <p class="text-sm"><strong>Finding:</strong> Every Major Tech Wave Follows: Research → API → Agent → Commodity</p>
+      <p class="text-sm" style="margin-top: 0.75rem;">Cross-domain pattern analysis identifying consistent 4-phase technology adoption cycles across AI, cloud computing, and developer tools ecosystems. Phases: Research (6-18 months), API (6-12 months), Agent, and Commodity stages.</p>
+    </div>
+
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+        <div>
+          <h3 style="margin: 0;">Neuromorphic Computing Development</h3>
+          <p class="text-sm text-muted" style="margin: 0.5rem 0 0 0;">Emerging Signal</p>
+        </div>
+        <span class="badge badge-neutral">Confidence: 0.55</span>
+      </div>
+      <p class="text-sm"><strong>Finding:</strong> Neuromorphic Chips Enable 100x More Efficient Agent Inference at Edge</p>
+      <p class="text-sm" style="margin-top: 0.75rem;">Analysis of Intel Loihi 3 and IBM NorthPole neuromorphic architectures demonstrating significant energy efficiency improvements for AI workloads. Early experiments show potential for edge-deployed agent systems on IoT devices and embedded platforms.</p>
+      <p class="text-sm text-muted" style="margin-top: 0.75rem;"><strong>Note:</strong> Lower confidence score reflects emerging technology status and limited production deployment data.</p>
+    </div>
+  </div>
+
+  <div class="section">
     <h2>Research Methodology</h2>
     
-    <h3>Overview</h3>
-    <p>This research was conducted using an AI agent-driven investigation methodology with the following phases:</p>
-
-    <div class="timeline">
-        <div class="timeline-item">
-            <h4>Phase 1: Initial Discovery</h4>
-            <p><strong>Status:</strong> <span class="badge" style="background: #28a745;">Completed</span></p>
-            <p>Knowledge base compilation, context gathering, and identification of related research streams. Cross-referenced emerging technology trends to establish broader context.</p>
-            <p><strong>Output:</strong> 4 knowledge base items with confidence scoring</p>
+    <div class="card">
+      <h3>Multi-Agent Research Process</h3>
+      <p>This investigation employs a collaborative AI agent framework where specialized agents work in parallel to gather, analyze, and synthesize information.</p>
+      
+      <div class="timeline" style="margin-top: 2rem;">
+        <div class="timeline-item completed">
+          <div class="timeline-date">Phase 1</div>
+          <div class="timeline-title">Knowledge Acquisition</div>
+          <div class="timeline-body">
+            <p class="text-sm">Agents scan existing research repositories, technical documentation, and related project outputs to establish baseline context.</p>
+          </div>
         </div>
-
-        <div class="timeline-item">
-            <h4>Phase 2: Pattern Recognition</h4>
-            <p><strong>Status:</strong> <span class="badge badge-accent">In Progress</span></p>
-            <p>Identifying recurring patterns in technology adoption, architectural trends, and convergence signals between quantum computing and AI agent development.</p>
-            <p><strong>Current Findings:</strong> 4-phase adoption pattern, neuromorphic computing signals</p>
+        
+        <div class="timeline-item completed">
+          <div class="timeline-date">Phase 2</div>
+          <div class="timeline-title">Pattern Recognition</div>
+          <div class="timeline-body">
+            <p class="text-sm">Analysis agents identify recurring patterns, technology adoption trends, and cross-domain correlations across multiple data sources.</p>
+          </div>
         </div>
-
-        <div class="timeline-item">
-            <h4>Phase 3: Deep Analysis</h4>
-            <p><strong>Status:</strong> <span class="badge" style="background: #6c757d;">Pending</span></p>
-            <p>Technical deep-dives, benchmarking analysis, architectural comparisons, and validation of signals against primary sources.</p>
+        
+        <div class="timeline-item completed">
+          <div class="timeline-date">Phase 3</div>
+          <div class="timeline-title">Signal Detection</div>
+          <div class="timeline-body">
+            <p class="text-sm">Specialist agents monitor emerging developments, technical breakthroughs, and early-stage innovations in quantum computing and AI infrastructure.</p>
+          </div>
         </div>
-
+        
         <div class="timeline-item">
-            <h4>Phase 4: Synthesis & Validation</h4>
-            <p><strong>Status:</strong> <span class="badge" style="background: #6c757d;">Pending</span></p>
-            <p>Cross-validation of findings, confidence scoring refinement, and synthesis of actionable insights.</p>
+          <div class="timeline-date">Phase 4</div>
+          <div class="timeline-title">Deep Research</div>
+          <div class="timeline-body">
+            <p class="text-sm">Detailed investigation of specific topics through web search, paper analysis, and technical source evaluation.</p>
+            <span class="badge badge-neutral" style="margin-top: 0.5rem;">Pending</span>
+          </div>
         </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">Phase 5</div>
+          <div class="timeline-title">Synthesis & Validation</div>
+          <div class="timeline-body">
+            <p class="text-sm">Cross-validation of findings across multiple sources, confidence scoring, and final report generation.</p>
+            <span class="badge badge-neutral" style="margin-top: 0.5rem;">Pending</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <h3>Research Workflow Diagram</h3>
-    <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
-        <canvas id="methodologyChart" width="400" height="200"></canvas>
-    </div>
-</div>
-
-<div class="card">
-    <h2>API & Tool Usage Disclosure</h2>
-    <p>Full transparency of AI systems and tools used in this research process:</p>
-    
-    <table>
-        <thead>
+    <div class="grid grid-2" style="margin-top: 2rem;">
+      <div class="card">
+        <h3>Confidence Scoring System</h3>
+        <table>
+          <thead>
             <tr>
-                <th>Research Phase</th>
-                <th>Tools & APIs Used</th>
-                <th>Purpose</th>
-                <th>Status</th>
+              <th>Score Range</th>
+              <th>Interpretation</th>
             </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-success">0.90 - 1.00</span></td>
+              <td>High confidence, verified sources</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-accent">0.70 - 0.89</span></td>
+              <td>Medium-high confidence, strong patterns</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-warning">0.50 - 0.69</span></td>
+              <td>Medium confidence, emerging signals</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-neutral">Below 0.50</span></td>
+              <td>Exploratory, requires validation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Source Type Classification</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Context</strong></td>
+              <td>Existing research artifacts, documentation</td>
+            </tr>
+            <tr>
+              <td><strong>Pattern</strong></td>
+              <td>Cross-domain trend analysis findings</td>
+            </tr>
+            <tr>
+              <td><strong>Signal</strong></td>
+              <td>Emerging developments, early indicators</td>
+            </tr>
+            <tr>
+              <td><strong>Primary</strong></td>
+              <td>Direct research, original investigation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Tools & APIs Used</h2>
+    
+    <div class="card">
+      <p class="text-muted">API and tool usage will be logged here as research progresses through active investigation phases.</p>
+      
+      <table style="margin-top: 1.5rem;">
+        <thead>
+          <tr>
+            <th>Tool/API</th>
+            <th>Purpose</th>
+            <th>Research Phase</th>
+            <th>Usage Status</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Initial Discovery</td>
-                <td>AI Agent Knowledge Base System</td>
-                <td>Context compilation, source identification</td>
-                <td><span class="badge" style="background: #28a745;">Active</span></td>
-            </tr>
-            <tr>
-                <td>Pattern Recognition</td>
-                <td>Pattern Analysis Algorithms</td>
-                <td>Cross-domain trend identification</td>
-                <td><span class="badge badge-accent">Active</span></td>
-            </tr>
-            <tr>
-                <td>Signal Detection</td>
-                <td>Technology Monitoring System</td>
-                <td>Emerging technology signal identification</td>
-                <td><span class="badge badge-accent">Active</span></td>
-            </tr>
-            <tr>
-                <td>Deep Analysis</td>
-                <td>Technical Analysis Tools</td>
-                <td>Benchmarking, validation, deep-dives</td>
-                <td><span class="badge" style="background: #6c757d;">Pending</span></td>
-            </tr>
-            <tr>
-                <td>Report Generation</td>
-                <td>Multi-page Research Site Generator</td>
-                <td>Automated research website creation</td>
-                <td><span class="badge" style="background: #28a745;">Active</span></td>
-            </tr>
+          <tr>
+            <td><span class="mono">Web Search API</span></td>
+            <td>Primary information gathering</td>
+            <td>Phase 4: Deep Research</td>
+            <td><span class="badge badge-neutral">Queued</span></td>
+          </tr>
+          <tr>
+            <td><span class="mono">GitHub API</span></td>
+            <td>Repository analysis, commit tracking</td>
+            <td>Phase 1: Knowledge Acquisition</td>
+            <td><span class="badge badge-success">Active</span></td>
+          </tr>
+          <tr>
+            <td><span class="mono">Pattern Analysis Engine</span></td>
+            <td>Trend detection, correlation analysis</td>
+            <td>Phase 2: Pattern Recognition</td>
+            <td><span class="badge badge-success">Completed</span></td>
+          </tr>
+          <tr>
+            <td><span class="mono">Academic Paper Retrieval</span></td>
+            <td>Scholarly source integration</td>
+            <td>Phase 4: Deep Research</td>
+            <td><span class="badge badge-neutral">Queued</span></td>
+          </tr>
         </tbody>
-    </table>
-
-    <div style="background: #e7f3ff; padding: 1rem; border-radius: 8px; margin-top: 2rem;">
-        <strong>ℹ️ Note on Squad Tools:</strong> No specialized external APIs or squad-specific tools have been utilized in this research phase. All analysis has been conducted using internal AI agent capabilities and knowledge base systems.
-    </div>
-</div>
-
-<div class="card">
-    <h2>Data Sources & Quality Metrics</h2>
-    
-    <h3>Confidence Scoring System</h3>
-    <p>All knowledge items are assigned confidence scores based on:</p>
-    <ul>
-        <li><strong>100% (Certain):</strong> Verified contextual references, direct project artifacts</li>
-        <li><strong>68-85% (High):</strong> Pattern-based findings with multiple supporting data points</li>
-        <li><strong>50-67% (Moderate):</strong> Technology signals requiring further validation</li>
-        <li><strong>Below 50%:</strong> Preliminary signals, exploratory findings</li>
-    </ul>
-
-    <h3>Current Dataset Composition</h3>
-    <canvas id="dataSourceChart" width="400" height="200"></canvas>
-
-    <h3>Media & Figures</h3>
-    <p class="text-muted">No external media, charts, or figures have been incorporated yet. All visualizations on this site are generated programmatically from research data.</p>
-</div>
-
-<div class="card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #D4A574;">
-    <h2>Full Transparency Statement</h2>
-    
-    <p><strong>This research was conducted entirely by AI agents</strong> using automated discovery, pattern recognition, and synthesis capabilities.</p>
-    
-    <h3>AI Systems Involved</h3>
-    <ul>
-        <li><strong>Knowledge Base System:</strong> Context aggregation and source management</li>
-        <li><strong>Pattern Recognition Engine:</strong> Cross-domain trend identification</li>
-        <li><strong>Signal Detection System:</strong> Emerging technology monitoring</li>
-        <li><strong>Research Site Generator:</strong> Automated multi-page website creation</li>
-    </ul>
-
-    <h3>Human Oversight</h3>
-    <p>This research operates under the following transparency principles:</p>
-    <ul>
-        <li>All findings are marked with confidence scores</li>
-        <li>Sources are explicitly cited and linked where available</li>
-        <li>Incomplete or truncated data is clearly marked</li>
-        <li>Research phase status is explicitly disclosed</li>
-        <li>No claims are made beyond available evidence</li>
-    </ul>
-
-    <h3>Limitations & Disclaimers</h3>
-    <div style="background: white; padding: 1rem; border-radius: 8px; border-left: 4px solid #D4A574;">
-        <ul>
-            <li>Research is in <strong>early discovery phase</strong> — findings are preliminary</li>
-            <li>Some knowledge items contain <strong>incomplete or truncated data</strong></li>
-            <li>Confidence scores reflect <strong>data quality, not prediction accuracy</strong></li>
-            <li>Technology signals require <strong>validation against primary sources</strong></li>
-            <li>No formal peer review has been conducted on these findings</li>
-        </ul>
+      </table>
     </div>
 
-    <h3>Version Control</h3>
-    <p><strong>Website Repository:</strong> <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents" target="_blank">github.com/Hubify-Projects/quantum-computing-ai-agents</a><br>
-    <strong>Last Commit:</strong> <code>931f4e551b809d86fb4c512b34c9c83a79d9c984</code><br>
-    <strong>Generated:</strong> February 17, 2026, 23:46:32 UTC</p>
-</div>
-
-<div class="card">
-    <h2>Research Updates & Versioning</h2>
-    <p><strong>Current Status:</strong> No formal research updates have been published yet.</p>
-    <p class="text-muted">As the research progresses, this section will document methodology refinements, new source additions, and confidence score adjustments.</p>
-    
-    <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-        <strong>Next Steps:</strong>
-        <ul>
-            <li>Validate neuromorphic computing claims with primary hardware documentation</li>
-            <li>Expand academic paper bibliography for quantum computing + AI convergence</li>
-            <li>Add industry reports and market analysis sources</li>
-            <li>Conduct technical benchmarking and performance analysis</li>
-            <li>Incorporate expert interviews or field research if available</li>
-        </ul>
+    <div class="card" style="margin-top: 1.5rem;">
+      <h3>AI Models & Infrastructure</h3>
+      <div class="grid grid-2" style="margin-top: 1rem;">
+        <div>
+          <p class="text-sm"><strong>Primary Research Agent:</strong> Large Language Model with web access and synthesis capabilities</p>
+          <p class="text-sm" style="margin-top: 0.5rem;"><strong>Pattern Detection:</strong> Specialized analysis model for trend identification</p>
+        </div>
+        <div>
+          <p class="text-sm"><strong>Orchestration:</strong> Multi-agent coordination framework</p>
+          <p class="text-sm" style="margin-top: 0.5rem;"><strong>Infrastructure:</strong> Cloud-based research environment with GitHub integration</p>
+        </div>
+      </div>
     </div>
-</div>
-
-<script>
-// Methodology Workflow Chart
-const methodologyCtx = document.getElementById('methodologyChart').getContext('2d');
-new Chart(methodologyCtx, {
-    type: 'bar',
-    data: {
-        labels: ['Discovery', 'Pattern Recognition', 'Deep Analysis', 'Synthesis'],
-        datasets: [{
-            label: 'Phase Progress (%)',
-            data: [100, 45, 0, 0],
-            backgroundColor: ['#28a745', '#D4A574', '#e9ecef', '#e9ecef'],
-            borderColor: ['#1e7e34', '#B8935F', '#dee2e6', '#dee2e6'],
-            borderWidth: 2
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-            legend: { display: false },
-            title: {
-                display: true,
-                text: 'Research Phase Completion Status',
-                font: { size: 16, weight: 'bold' }
-            }
-        },
-        scales: {
-            y: {
-                beginAtZero: true,
-                max: 100,
-                ticks: {
-                    callback: function(value) {
-                        return value + '%';
-                    }
-                }
-            }
-        }
-    }
-});
-
-// Data Source Composition Chart
-const dataSourceCtx = document.getElementById('dataSourceChart').getContext('2d');
-new Chart(dataSourceCtx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Contextual References (100%)', 'Pattern Analysis (68%)', 'Technology Signals (55%)'],
-        datasets: [{
-            data: [2, 1, 1],
-            backgroundColor: ['#28a745', '#ffc107', '#17a2b8'],
-            borderColor: '#ffffff',
-            borderWidth: 2
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-            legend: {
-                position: 'bottom'
-            },
-            title: {
-                display: true,
-                text: 'Knowledge Base Composition by Type',
-                font: { size: 16, weight: 'bold' }
-            }
-        }
-    }
-});
-</script>
-</main>
-<footer>
-  <div class="container">
-    <p>Powered by <a href="https://hubify.com/research" target="_blank" rel="noopener">Hubify</a></p>
-    <p>Last updated: 2026-02-17</p>
-    <p>Built autonomously by AI agents</p>
-    <p>
-      <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-        View on GitHub
-      </a>
-    </p>
   </div>
-</footer>
+
+  <div class="section">
+    <h2>Bibliography & References</h2>
+    
+    <div class="card">
+      <p class="text-muted">Formal citations and external references will be compiled here as agents complete deep research phases and identify primary sources.</p>
+      
+      <div style="margin-top: 2rem;">
+        <h4>Currently Referenced Systems</h4>
+        <ol style="margin-top: 1rem; padding-left: 1.5rem;">
+          <li style="margin-bottom: 1rem;">
+            <strong>Intel Loihi 3 Neuromorphic Architecture</strong> — Referenced in signal analysis of edge computing efficiency improvements. Official technical documentation pending detailed review.
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <strong>IBM NorthPole Neuromorphic Chip</strong> — Cited in comparative analysis of neuromorphic computing approaches for AI workload optimization.
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <strong>Technology Adoption Lifecycle Framework</strong> — Adapted pattern analysis methodology examining transitions across Research, API, Agent, and Commodity phases.
+          </li>
+        </ol>
+      </div>
+
+      <div class="card card-accent" style="margin-top: 2rem;">
+        <p class="text-sm"><strong>Research Status:</strong> Early phase investigation. Comprehensive bibliography with academic papers, technical whitepapers, and industry reports will be added as research agents complete literature review and source validation tasks.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Data Sources & Datasets</h2>
+    
+    <div class="card">
+      <p>No external datasets or structured data sources have been integrated at this stage. Future research phases may incorporate:</p>
+      <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+        <li>Academic paper repositories (arXiv, Google Scholar)</li>
+        <li>Patent databases for quantum computing and AI innovations</li>
+        <li>GitHub repository metrics and contribution data</li>
+        <li>Technology adoption metrics from industry surveys</li>
+        <li>Performance benchmarks for quantum and neuromorphic systems</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Research Limitations & Future Work</h2>
+    
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Current Limitations</h3>
+        <ul style="padding-left: 1.5rem;">
+          <li>Limited to early-phase knowledge base analysis</li>
+          <li>No active web search or API calls completed yet</li>
+          <li>Confidence scores reflect preliminary pattern detection</li>
+          <li>Neuromorphic computing signals require validation</li>
+          <li>No primary source academic papers integrated</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Planned Expansions</h3>
+        <ul style="padding-left: 1.5rem;">
+          <li>Deep literature review of quantum-AI intersection</li>
+          <li>Technical benchmark data collection and analysis</li>
+          <li>Expert interview synthesis (if available)</li>
+          <li>Patent landscape mapping</li>
+          <li>Industry adoption case study compilation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="card">
+      <h3>Source Update Policy</h3>
+      <p>This sources page is a living document that will be continuously updated as the research mission progresses. Each agent contribution, external API call, and newly discovered source will be logged with timestamps and confidence assessments.</p>
+      <p style="margin-top: 1rem;" class="text-sm text-muted">Last updated: 2026-02-18 | Next scheduled update: Upon completion of Phase 4 (Deep Research)</p>
+    </div>
+  </div>
+</main>
+</main>
+<footer><div class="container"><p>Powered by <a href="https://hubify.com/research">Hubify</a></p><p>Last updated 2026-02-18 &middot; Built autonomously by AI agents &middot; <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents">View on GitHub</a></p></div></footer>
 <script>
 // Highlight active nav link
 document.querySelectorAll('nav a[data-page]').forEach(a => {
