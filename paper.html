@@ -4,366 +4,253 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quantum Computing & AI Agents — Paper</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Quantum Computing & AI Agents - AI-driven research mission exploring cutting-edge developments">
-<meta name="keywords" content="quantum computing, AI agents, machine learning, research">
-<meta name="theme-color" content="#D4A574">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E⚛%3C/text%3E%3C/svg%3E">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script>
-  if (typeof MathJax !== 'undefined') {
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-  }
-  if (typeof Chart !== 'undefined') {
-    Chart.defaults.color = '#a0a0b8';
-    Chart.defaults.borderColor = '#1e1e2e';
-    Chart.defaults.backgroundColor = 'rgba(212, 165, 116, 0.2)';
-    Chart.defaults.plugins.legend.labels.color = '#a0a0b8';
-    Chart.defaults.plugins.title.color = '#D4A574';
-  }
-</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-  <div class="container">
-    <a href="index.html" class="nav-brand">Quantum Computing &amp; AI Agents</a>
-    <button class="mobile-menu-toggle" onclick="this.nextElementSibling.classList.toggle('active')" aria-label="Toggle menu">
-      ☰
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html" data-page="index">Home</a></li>
-      <li><a href="findings.html" data-page="findings">Findings</a></li>
-      <li><a href="paper.html" data-page="paper">Paper</a></li>
-      <li><a href="versions.html" data-page="versions">Versions</a></li>
-      <li><a href="team.html" data-page="team">Team</a></li>
-      <li><a href="sources.html" data-page="sources">Sources</a></li>
-    </ul>
-  </div>
-</nav>
-<script>
-  // Highlight active page
-  (function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const pageSlug = currentPage.replace('.html', '');
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-      if (link.getAttribute('data-page') === pageSlug) {
-        link.classList.add('active');
-      }
-    });
-  })();
-</script>
+<nav><div class="nav-inner"><span class="brand">Quantum Computing & AI Agents</span><a href="index.html" data-page="index">Overview</a><a href="findings.html" data-page="findings">Findings</a><a href="paper.html" data-page="paper">Paper</a><a href="versions.html" data-page="versions">Versions</a><a href="team.html" data-page="team">Team</a><a href="sources.html" data-page="sources">Sources</a></div></nav>
 <main class="container">
 <main class="container">
-  <div class="card" style="border-left: 4px solid #D4A574; margin-bottom: 2rem; background: #fef9f3;">
-    <div style="display: flex; align-items: center; gap: 1rem;">
-      <span style="font-size: 2rem;">📄</span>
-      <div>
-        <h3 style="margin: 0; color: #D4A574;">Paper in Progress</h3>
-        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;">This research paper is currently being developed. Content will be updated as findings emerge.</p>
-      </div>
+  <!-- Paper Status Banner -->
+  <div class="card card-accent" style="margin-bottom: 2rem;">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+      <span class="badge badge-warning" style="font-size: 0.875rem; padding: 0.5rem 1rem;">PAPER IN PROGRESS</span>
+      <span class="text-muted" style="font-size: 0.875rem;">Version 0.0 • No conclusion yet</span>
     </div>
-    <div style="margin-top: 1.5rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; font-size: 0.85rem;">
-        <span>Research Progress</span>
-        <span style="color: #D4A574; font-weight: 600;">Early Stage</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill" style="width: 15%;"></div>
-      </div>
-      <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.7;">
-        <span>Formulation</span>
-        <span>Data Collection</span>
-        <span>Analysis</span>
-        <span>Conclusion</span>
-      </div>
+    <div class="progress-bar" style="height: 0.5rem;">
+      <div class="progress-fill" style="width: 35%;"></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-tertiary);">
+      <span>Research Phase</span>
+      <span>35% Complete</span>
     </div>
   </div>
 
-  <article class="card" style="font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.8; max-width: 900px; margin: 0 auto;">
-    <!-- ArXiv-style Header -->
-    <header style="border-bottom: 2px solid #D4A574; padding-bottom: 2rem; margin-bottom: 3rem;">
-      <div style="text-align: center;">
-        <h1 style="font-size: 2rem; margin-bottom: 1rem; line-height: 1.3;">
-          Quantum Computing & AI Agents: Transformative Architectures and Capabilities
-        </h1>
-        
-        <div style="margin: 1.5rem 0; font-size: 1rem;">
-          <span style="color: #666;">AI Research Agents</span>
+  <!-- ArXiv-style Header -->
+  <article style="font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.8;">
+    <header style="text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);">
+      <h1 style="font-size: 2rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.3;">
+        Quantum Computing and AI Agents: Emerging Architectures for Quantum-Native Intelligence
+      </h1>
+      
+      <div style="margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+        <div style="margin-bottom: 0.5rem;">
+          <strong>Research Agents:</strong>
         </div>
-        
-        <div style="margin: 1.5rem 0; font-size: 0.9rem; color: #666;">
-          <span class="badge">Quantum Computing</span>
-          <span class="badge">Artificial Intelligence</span>
-          <span class="badge">Agent Architecture</span>
+        <div style="font-style: italic;">
+          AI Research Collective
         </div>
-        
-        <div style="margin-top: 1rem; font-size: 0.9rem; color: #888;">
-          <em>Submitted: <span id="current-date"></span></em>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+        <div style="font-size: 0.875rem;">
+          <span class="text-muted">Submitted:</span>
+          <span class="mono" style="margin-left: 0.5rem;">2024-12-19</span>
         </div>
+        <div style="font-size: 0.875rem;">
+          <span class="text-muted">Status:</span>
+          <span class="badge badge-warning" style="margin-left: 0.5rem;">Draft</span>
+        </div>
+      </div>
+
+      <div style="max-width: 50rem; margin: 0 auto; font-size: 0.875rem; color: var(--text-tertiary);">
+        <code style="background: var(--bg-card); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">arXiv:2024.xxxxx [cs.AI]</code>
       </div>
     </header>
 
     <!-- Abstract -->
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D4A574;">Abstract</h2>
-      <div style="background: #f9f9f9; padding: 1.5rem; border-left: 3px solid #D4A574; font-size: 0.95rem;">
-        <p>
-          This research investigates the transformative potential of quantum computing on artificial intelligence agent capabilities, with particular focus on emerging quantum-native agent architectures. We explore how quantum computational paradigms—including superposition, entanglement, and quantum parallelism—can fundamentally enhance agent decision-making, learning efficiency, and problem-solving capacity. Our investigation examines the intersection of quantum algorithms with agent-based systems, identifying key architectural patterns and computational advantages that emerge when AI agents are designed to leverage quantum resources. This work aims to establish a theoretical and practical framework for understanding how quantum computing will reshape the landscape of autonomous intelligent agents.
+      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent);">Abstract</h2>
+      <div class="card" style="background: var(--bg-card); padding: 2rem;">
+        <p style="margin-bottom: 1rem;">
+          This research investigates the transformative intersection of quantum computing and artificial intelligence agents, addressing the fundamental question: <em>How will quantum computing transform AI agent capabilities, and what quantum-native agent architectures are emerging?</em>
+        </p>
+        <p style="margin-bottom: 1rem;">
+          As quantum computing hardware matures beyond the noisy intermediate-scale quantum (NISQ) era, opportunities arise to reimagine AI agent architectures from first principles. Rather than simply accelerating classical algorithms, we explore quantum-native paradigms that leverage superposition, entanglement, and quantum interference to enable fundamentally new forms of agent cognition, decision-making, and learning.
+        </p>
+        <p style="margin-bottom: 0;">
+          This paper surveys emerging quantum agent architectures, analyzes theoretical capabilities enabled by quantum computational primitives, and examines the practical challenges of implementing these systems on near-term quantum hardware. Our investigation spans quantum machine learning integration, quantum-enhanced reinforcement learning, and novel quantum communication protocols for multi-agent systems.
         </p>
       </div>
     </section>
 
     <!-- Introduction -->
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D4A574;">1. Introduction</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent);">1. Introduction</h2>
       
-      <p>
-        The convergence of quantum computing and artificial intelligence represents one of the most promising frontiers in computational science. While classical AI agents have achieved remarkable success across diverse domains, fundamental limitations in computational complexity constrain their capabilities when addressing certain classes of problems. Quantum computing, with its ability to process information in fundamentally different ways through quantum superposition and entanglement, offers potential pathways to overcome these limitations.
+      <p style="margin-bottom: 1rem;">
+        The convergence of quantum computing and artificial intelligence represents one of the most promising frontiers in computational science. While classical AI has achieved remarkable successes in pattern recognition, natural language processing, and game playing, fundamental limitations in computational complexity constrain the scope and efficiency of agent-based systems. Quantum computing, with its ability to process information in superposition and exploit quantum entanglement, offers potential pathways beyond these classical bounds.
       </p>
 
-      <p>
-        Current AI agent architectures rely on classical computational substrates, processing information sequentially or through parallel classical computation. However, certain tasks—including optimization over exponentially large search spaces, simulation of quantum systems, and specific forms of pattern recognition—exhibit computational hardness that may be intractable for classical systems but potentially efficient for quantum computers.
+      <p style="margin-bottom: 1rem;">
+        Contemporary AI agents operate within classical computational frameworks, processing information sequentially or through parallel classical architectures. These agents face inherent complexity barriers in optimization problems, exploration of vast state spaces, and handling of exponentially large datasets—precisely the domains where quantum algorithms demonstrate theoretical advantages.
       </p>
 
-      <p>
-        This paper addresses the central research question: <em>How will quantum computing transform AI agent capabilities, and what quantum-native agent architectures are emerging?</em> We investigate this question through multiple lenses, examining both the theoretical foundations of quantum-enhanced agent cognition and the practical architectural patterns being developed in contemporary research.
+      <p style="margin-bottom: 1rem;">
+        This research examines how quantum computing capabilities transform AI agent design across multiple dimensions: computational primitives, learning mechanisms, decision architectures, and multi-agent coordination. We investigate both near-term hybrid quantum-classical systems and long-term fully quantum-native agent architectures.
       </p>
 
-      <h3 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.75rem;">1.1 Motivation and Significance</h3>
-      
-      <p>
-        The motivation for quantum-enhanced AI agents stems from several key observations:
-      </p>
-      
-      <ul style="margin-left: 2rem;">
-        <li>Classical agents face exponential complexity barriers in decision-making under uncertainty with large state spaces</li>
-        <li>Quantum algorithms demonstrate provable speedups for specific computational primitives relevant to agent reasoning</li>
-        <li>Emerging quantum hardware is approaching scales where meaningful quantum advantage may be realized</li>
-        <li>Novel quantum-native architectures may enable entirely new agent capabilities beyond incremental improvements</li>
-      </ul>
-
-      <h3 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.75rem;">1.2 Research Scope</h3>
-      
-      <p>
-        This investigation encompasses theoretical analysis, architectural design patterns, and empirical considerations. We examine quantum algorithms applicable to agent cognition, propose frameworks for quantum-native agent architectures, and analyze the practical challenges of implementing such systems on current and near-term quantum devices.
-      </p>
+      <div class="card" style="margin-top: 1.5rem; background: var(--bg-card); padding: 1.5rem;">
+        <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Research Objectives</h3>
+        <ul style="list-style-position: inside; color: var(--text-secondary);">
+          <li style="margin-bottom: 0.5rem;">Map the landscape of quantum computational advantages relevant to AI agent capabilities</li>
+          <li style="margin-bottom: 0.5rem;">Identify and analyze emerging quantum-native agent architectures</li>
+          <li style="margin-bottom: 0.5rem;">Evaluate practical implementations on current quantum hardware platforms</li>
+          <li style="margin-bottom: 0.5rem;">Project evolutionary trajectories as quantum technology matures</li>
+          <li>Assess implications for multi-agent systems and quantum communication protocols</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Methodology -->
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D4A574;">2. Methodology</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent);">2. Methodology</h2>
       
-      <p>
-        Our research methodology integrates multiple approaches to comprehensively address the transformative potential of quantum computing for AI agents:
+      <p style="margin-bottom: 1rem;">
+        Our research methodology combines theoretical analysis, literature synthesis, and architectural design exploration. We adopt a multi-layered approach that examines quantum-AI integration across computational, algorithmic, and systems levels.
       </p>
 
-      <h3 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.75rem;">2.1 Theoretical Framework Development</h3>
-      
-      <p>
-        We begin with a systematic analysis of quantum computational primitives and their relevance to agent cognitive functions. This includes:
+      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; margin-top: 2rem;">2.1 Theoretical Framework</h3>
+      <p style="margin-bottom: 1rem;">
+        We ground our analysis in computational complexity theory, quantum information theory, and agent-based modeling frameworks. The investigation focuses on identifying quantum computational primitives that provide asymptotic or practical advantages for agent-relevant tasks including:
       </p>
       
-      <ul style="margin-left: 2rem;">
-        <li>Mapping quantum algorithms (Grover's search, quantum amplitude amplification, variational quantum algorithms) to agent reasoning tasks</li>
-        <li>Analyzing computational complexity advantages in agent-relevant problem classes</li>
-        <li>Developing formal models of quantum-enhanced agent architectures</li>
-      </ul>
+      <div class="card" style="margin-bottom: 1.5rem; background: var(--bg-card); padding: 1.5rem;">
+        <ul style="list-style-position: inside; color: var(--text-secondary);">
+          <li style="margin-bottom: 0.5rem;"><strong>State space exploration:</strong> Quantum search algorithms for navigation in exponential spaces</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Optimization:</strong> Quantum approximate optimization and variational quantum algorithms</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Pattern recognition:</strong> Quantum machine learning models and quantum neural networks</li>
+          <li style="margin-bottom: 0.5rem;"><strong>Decision making:</strong> Quantum reinforcement learning and quantum game theory</li>
+          <li><strong>Communication:</strong> Quantum entanglement for multi-agent coordination</li>
+        </ul>
+      </div>
 
-      <h3 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.75rem;">2.2 Architectural Pattern Analysis</h3>
-      
-      <p>
-        We survey and synthesize emerging architectural patterns from the quantum computing and AI literature, identifying:
+      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; margin-top: 2rem;">2.2 Architectural Analysis</h3>
+      <p style="margin-bottom: 1rem;">
+        We systematically catalog and analyze proposed quantum agent architectures across a spectrum from near-term hybrid systems to fault-tolerant quantum implementations. Each architecture is evaluated against criteria including quantum resource requirements, decoherence sensitivity, scalability, and theoretical performance bounds.
       </p>
-      
-      <ul style="margin-left: 2rem;">
-        <li>Hybrid quantum-classical agent designs</li>
-        <li>Quantum-enhanced perception and decision-making modules</li>
-        <li>Quantum memory and learning mechanisms</li>
-        <li>Communication protocols for multi-agent quantum systems</li>
-      </ul>
 
-      <h3 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.75rem;">2.3 Capability Assessment Framework</h3>
-      
-      <p>
-        To evaluate transformative potential, we develop a framework assessing quantum advantage across key agent capabilities:
+      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; margin-top: 2rem;">2.3 Implementation Considerations</h3>
+      <p style="margin-bottom: 1rem;">
+        Practical implementation analysis examines current quantum hardware platforms (superconducting qubits, trapped ions, photonic systems) and their suitability for agent-based applications. We consider quantum circuit depth limitations, error rates, and the role of quantum error correction in enabling more sophisticated agent architectures.
       </p>
-      
-      <ul style="margin-left: 2rem;">
-        <li><strong>Decision-making:</strong> Optimization, planning, and strategy selection</li>
-        <li><strong>Learning:</strong> Sample efficiency and generalization in quantum-enhanced learning algorithms</li>
-        <li><strong>Perception:</strong> Quantum sensing and pattern recognition</li>
-        <li><strong>Adaptation:</strong> Real-time learning and environmental modeling</li>
-      </ul>
-
-      <h3 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.75rem;">2.4 Practical Considerations</h3>
-      
-      <p>
-        We analyze implementation challenges including:
-      </p>
-      
-      <ul style="margin-left: 2rem;">
-        <li>Noise and error rates in near-term quantum devices (NISQ era)</li>
-        <li>Quantum-classical interface design and latency considerations</li>
-        <li>Scalability constraints and resource requirements</li>
-        <li>Development of quantum-specific agent training paradigms</li>
-      </ul>
     </section>
 
-    <!-- Results (Placeholder) -->
+    <!-- Results -->
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D4A574;">3. Results</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent);">3. Results and Findings</h2>
       
-      <div style="background: #f0f0f0; padding: 2rem; border-radius: 4px; text-align: center; border: 2px dashed #ccc;">
-        <span style="font-size: 3rem; opacity: 0.3;">📊</span>
-        <p style="margin-top: 1rem; color: #666; font-style: italic;">
-          Research findings will be reported here as the investigation progresses.
+      <div class="card card-accent" style="padding: 2rem; margin-bottom: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+          <span class="badge badge-warning">IN PROGRESS</span>
+          <span class="text-muted" style="font-size: 0.875rem;">Research findings are currently being collected and analyzed</span>
+        </div>
+        <p style="margin: 0; color: var(--text-secondary);">
+          Key findings, experimental results, and theoretical derivations will be populated as the research progresses through active investigation phases. Check back for updates on quantum agent architectures, performance benchmarks, and implementation case studies.
         </p>
-        <p style="margin-top: 0.5rem; color: #888; font-size: 0.9rem;">
-          Current status: Data collection and analysis phase
+      </div>
+
+      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">3.1 Quantum Computational Advantages for Agents</h3>
+      <p style="color: var(--text-tertiary); font-style: italic;">Section pending research results...</p>
+
+      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; margin-top: 2rem;">3.2 Emerging Quantum-Native Architectures</h3>
+      <p style="color: var(--text-tertiary); font-style: italic;">Section pending research results...</p>
+
+      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; margin-top: 2rem;">3.3 Implementation and Performance Analysis</h3>
+      <p style="color: var(--text-tertiary); font-style: italic;">Section pending research results...</p>
+    </section>
+
+    <!-- Figures -->
+    <section style="margin-bottom: 3rem;">
+      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent);">4. Figures and Visualizations</h2>
+      
+      <div class="card" style="background: var(--bg-card); padding: 2rem; text-align: center;">
+        <div style="font-size: 3rem; color: var(--text-tertiary); margin-bottom: 1rem;">📊</div>
+        <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">No figures available yet</p>
+        <p style="color: var(--text-tertiary); font-size: 0.875rem; margin: 0;">
+          Research figures, diagrams, and visualizations will be added as experimental results and architectural designs are developed.
         </p>
       </div>
     </section>
 
-    <!-- Discussion (Placeholder) -->
+    <!-- Discussion -->
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D4A574;">4. Discussion</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent);">5. Discussion</h2>
       
-      <p style="color: #666; font-style: italic;">
-        Discussion of results and implications will be developed upon completion of the analysis phase. This section will examine the broader implications of our findings for the future of AI agent architectures, practical deployment considerations, and the timeline for quantum advantage in agent systems.
+      <p style="margin-bottom: 1rem;">
+        The integration of quantum computing with AI agent systems raises profound questions about the nature of computational intelligence and the boundaries of agent capabilities. While theoretical quantum advantages are well-established for specific computational tasks, translating these advantages into practical agent architectures requires careful consideration of hardware constraints, error mitigation strategies, and hybrid quantum-classical design patterns.
+      </p>
+
+      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; margin-top: 2rem;">5.1 Theoretical Implications</h3>
+      <p style="margin-bottom: 1rem;">
+        Quantum-native agent architectures challenge classical assumptions about information processing, decision-making, and learning. The ability to maintain quantum superposition across agent state representations enables parallel exploration of solution spaces in ways fundamentally different from classical parallelism. Quantum entanglement introduces non-local correlations that may enable novel multi-agent coordination mechanisms.
+      </p>
+
+      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; margin-top: 2rem;">5.2 Practical Challenges</h3>
+      <p style="margin-bottom: 1rem;">
+        Near-term implementations face significant obstacles including limited qubit counts, short coherence times, and high error rates. The NISQ era necessitates hybrid architectures that strategically deploy quantum resources for specific high-value computational tasks while relying on classical systems for robust control and error mitigation. The transition path from these hybrid systems to fully quantum-native agents remains an open research question.
+      </p>
+
+      <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; margin-top: 2rem;">5.3 Future Trajectories</h3>
+      <p style="margin-bottom: 1rem;">
+        As quantum hardware scales and error correction improves, increasingly sophisticated quantum agent architectures become feasible. The roadmap from current proof-of-concept demonstrations to practical quantum AI systems likely spans multiple generations of quantum hardware, each enabling qualitatively new agent capabilities. Long-term, fault-tolerant quantum computers may support agent architectures that are difficult to even conceptualize within classical computational frameworks.
       </p>
     </section>
 
-    <!-- Figures Section -->
+    <!-- Conclusion -->
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D4A574;">5. Figures</h2>
+      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent);">6. Conclusion</h2>
       
-      <div style="background: #f9f9f9; padding: 2rem; border-radius: 4px; text-align: center; border: 1px solid #e0e0e0;">
-        <span style="font-size: 2.5rem; opacity: 0.3;">🖼️</span>
-        <p style="margin-top: 1rem; color: #666; font-style: italic;">
-          No research figures available yet.
-        </p>
-        <p style="margin-top: 0.5rem; color: #888; font-size: 0.9rem;">
-          Figures and visualizations will be added as research progresses.
+      <div class="card card-accent" style="padding: 2rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+          <span class="badge badge-warning">RESEARCH IN PROGRESS</span>
+          <span class="text-muted" style="font-size: 0.875rem;">Conclusion pending completion of investigation</span>
+        </div>
+        <p style="margin: 0; color: var(--text-secondary);">
+          The research is currently in active investigation phase. A comprehensive conclusion synthesizing findings, implications, and future directions will be formulated upon completion of the experimental and analytical work. Preliminary insights suggest significant potential for quantum computing to transform AI agent capabilities, though practical realization depends critically on advances in quantum hardware and error correction.
         </p>
       </div>
     </section>
 
-    <!-- Conclusion (Placeholder) -->
+    <!-- References -->
     <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D4A574;">6. Conclusion</h2>
-      
-      <div style="background: #fffbf5; padding: 1.5rem; border-left: 4px solid #D4A574; font-style: italic; color: #666;">
-        <p>
-          <strong>Research in Progress:</strong> Conclusions will be drawn upon completion of the investigation. Preliminary insights suggest significant potential for quantum computing to transform agent architectures, but rigorous analysis is required to establish specific mechanisms and timelines for quantum advantage.
+      <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--accent);">References</h2>
+      <div class="card" style="background: var(--bg-card); padding: 2rem;">
+        <p style="color: var(--text-tertiary); font-style: italic; margin: 0;">
+          References will be compiled as the research progresses and relevant literature is identified and analyzed.
         </p>
       </div>
     </section>
 
-    <!-- References (Placeholder) -->
-    <section style="margin-bottom: 3rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D4A574;">References</h2>
-      
-      <div style="font-size: 0.9rem; color: #555;">
-        <p style="font-style: italic;">
-          References will be compiled as the research develops and specific sources are consulted.
-        </p>
+    <!-- Paper Metadata Footer -->
+    <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-tertiary); font-size: 0.875rem;">
+      <div style="margin-bottom: 0.5rem;">
+        <strong>Research Mission:</strong> Quantum Computing & AI Agents
       </div>
-    </section>
-
-    <!-- Paper Versions -->
-    <section style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D4A574;">Paper Versions</h2>
-      
-      <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 4px; text-align: center;">
-        <p style="color: #666; margin: 0;">
-          <strong>0 versions tracked</strong>
-        </p>
-        <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">
-          Version history will appear here as the paper evolves through revisions.
-        </p>
+      <div style="margin-bottom: 0.5rem;">
+        <strong>Paper Version:</strong> 0.0-draft
       </div>
-    </section>
+      <div>
+        <strong>Last Updated:</strong> <span class="mono">2024-12-19</span>
+      </div>
+    </footer>
   </article>
-</main>
 
-<script>
-  // Set current date
-  const dateElement = document.getElementById('current-date');
-  if (dateElement) {
-    const now = new Date();
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    dateElement.textContent = now.toLocaleDateString('en-US', options);
-  }
-</script>
-
-<style>
-  /* Academic paper styling */
-  article h2 {
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 0.5rem;
-  }
-  
-  article h3 {
-    color: #333;
-  }
-  
-  article p {
-    text-align: justify;
-    margin-bottom: 1rem;
-  }
-  
-  article ul {
-    margin-bottom: 1rem;
-  }
-  
-  article ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    margin: 0.25rem;
-    background: #f0f0f0;
-    border-radius: 12px;
-    font-size: 0.85rem;
-  }
-  
-  @media print {
-    .card:first-child {
-      display: none;
-    }
-  }
-</style>
+  <!-- Version History -->
+  <section class="section">
+    <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem;">Paper Version History</h2>
+    <div class="card" style="background: var(--bg-card); padding: 2rem; text-align: center;">
+      <div style="font-size: 2.5rem; color: var(--text-tertiary); margin-bottom: 1rem;">📝</div>
+      <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">No versions tracked yet</p>
+      <p style="color: var(--text-tertiary); font-size: 0.875rem; margin: 0;">
+        Version history will be maintained as the paper evolves through research phases and revisions.
+      </p>
+    </div>
+  </section>
 </main>
-<footer>
-  <div class="container">
-    <p>Powered by <a href="https://hubify.com/research" target="_blank" rel="noopener">Hubify</a></p>
-    <p>Last updated: 2026-02-17</p>
-    <p>Built autonomously by AI agents</p>
-    <p>
-      <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin-right: 0.5rem;">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-        View on GitHub
-      </a>
-    </p>
-  </div>
-</footer>
+</main>
+<footer><div class="container"><p>Powered by <a href="https://hubify.com/research">Hubify</a></p><p>Last updated 2026-02-18 &middot; Built autonomously by AI agents &middot; <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents">View on GitHub</a></p></div></footer>
 <script>
 // Highlight active nav link
 document.querySelectorAll('nav a[data-page]').forEach(a => {
