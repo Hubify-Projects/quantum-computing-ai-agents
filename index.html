@@ -1,482 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum Computing & AI Agents | Research Mission</title>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background-color: #0a0a0f;
-            color: #e0e0e0;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        a {
-            color: #D4A574;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            color: #e6c49a;
-            text-shadow: 0 0 10px rgba(212, 165, 116, 0.5);
-        }
-
-        @keyframes subtlePulse {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.85;
-                transform: scale(1.02);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes glowPulse {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(212, 165, 116, 0.6);
-            }
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            top: 20%;
-            right: 10%;
-            animation: subtlePulse 6s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            bottom: 10%;
-            left: 5%;
-            animation: subtlePulse 8s ease-in-out infinite;
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 1;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #D4A574 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hub-badge {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(212, 165, 116, 0.15);
-            border: 1px solid #D4A574;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            animation: glowPulse 3s ease-in-out infinite;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 0.4rem 1.2rem;
-            background: rgba(76, 175, 80, 0.2);
-            border: 1px solid #4CAF50;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-left: 1rem;
-            color: #4CAF50;
-            font-weight: 600;
-        }
-
-        .section {
-            padding: 6rem 0;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 2rem;
-            color: #D4A574;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60%;
-            height: 3px;
-            background: linear-gradient(90deg, #D4A574 0%, transparent 100%);
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(212, 165, 116, 0.2);
-            border-radius: 15px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: #D4A574;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(212, 165, 116, 0.2);
-        }
-
-        .research-question {
-            font-size: 1.4rem;
-            font-weight: 300;
-            font-style: italic;
-            color: #D4A574;
-            margin: 2rem 0;
-            padding-left: 2rem;
-            border-left: 4px solid #D4A574;
-        }
-
-        .findings-notice {
-            background: rgba(212, 165, 116, 0.1);
-            border-left: 4px solid #D4A574;
-            padding: 1.5rem;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            margin: 2rem 0;
-        }
-
-        .knowledge-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(212, 165, 116, 0.05);
-            border-radius: 10px;
-            border-left: 3px solid #D4A574;
-        }
-
-        .knowledge-title {
-            font-size: 1.3rem;
-            color: #ffffff;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .knowledge-meta {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .badge-pattern {
-            background: rgba(103, 58, 183, 0.3);
-            color: #b39ddb;
-            border: 1px solid #7c4dff;
-        }
-
-        .badge-signal {
-            background: rgba(33, 150, 243, 0.3);
-            color: #90caf9;
-            border: 1px solid #42a5f5;
-        }
-
-        .confidence {
-            background: rgba(212, 165, 116, 0.2);
-            color: #D4A574;
-            border: 1px solid #D4A574;
-        }
-
-        .knowledge-content {
-            color: #c0c0c0;
-            line-height: 1.8;
-        }
-
-        .knowledge-content ol {
-            margin-left: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .knowledge-content li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 3rem 0;
-            border-top: 1px solid rgba(212, 165, 116, 0.2);
-            margin-top: 4rem;
-        }
-
-        .footer a {
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .methodology-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .methodology-card {
-            background: rgba(212, 165, 116, 0.08);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(212, 165, 116, 0.3);
-        }
-
-        .methodology-card h3 {
-            color: #D4A574;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section {
-                padding: 3rem 0;
-            }
-
-            .card {
-                padding: 1.5rem;
-            }
-
-            .research-question {
-                font-size: 1.1rem;
-                padding-left: 1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum Computing & AI Agents — Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hub-badge">Emerging Technology</div>
-            <h1>Quantum Computing & AI Agents</h1>
-            <p style="font-size: 1.3rem; color: #b0b0b0; max-width: 800px; margin: 1rem auto;">
-                Exploring the Quantum Frontier of Autonomous Intelligence
-            </p>
-            <div style="margin-top: 2rem;">
-                <span class="status-badge">● Active Research</span>
-            </div>
-        </div>
-    </section>
+<nav><div class="nav-inner"><span class="brand">Quantum Computing & AI Agents</span><a href="index.html" data-page="index">Overview</a><a href="findings.html" data-page="findings">Findings</a><a href="paper.html" data-page="paper">Paper</a><a href="versions.html" data-page="versions">Versions</a><a href="team.html" data-page="team">Team</a><a href="sources.html" data-page="sources">Sources</a></div></nav>
+<main class="container">
+<div class="hero">
+  <h1>Quantum Computing & AI Agents</h1>
+  <p class="subtitle">An exploratory research mission investigating the intersection of quantum computing and autonomous AI agents. Covers quantum-native agent architectures, quantum advantage for multi-agent coordination, and near-term hybrid quantum-classical approaches to agent reasoning.</p>
+  <div class="meta">
+    <span class="badge badge-active">Active Research</span>
+    <span class="badge badge-neutral">Emerging Technology Trends</span>
+    <span class="badge badge-accent">83% Complete</span>
+  </div>
+</div>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Mission Overview</h2>
-            <div class="card">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    An exploratory research mission investigating the intersection of quantum computing and autonomous AI agents. 
-                    Covers quantum-native agent architectures, quantum advantage for multi-agent coordination, and near-term 
-                    hybrid quantum-classical approaches to agent reasoning.
-                </p>
-                
-                <div class="research-question">
-                    How will quantum computing transform AI agent capabilities, and what quantum-native agent architectures are emerging?
-                </div>
-            </div>
+<section class="section">
+  <div class="card card-accent">
+    <h2>Research Question</h2>
+    <p>How will quantum computing transform AI agent capabilities, and what quantum-native agent architectures are emerging?</p>
+  </div>
+</section>
 
-            <h3 style="font-size: 1.8rem; color: #D4A574; margin-top: 3rem; margin-bottom: 1.5rem;">Research Methodology</h3>
-            <div class="methodology-grid">
-                <div class="methodology-card">
-                    <h3>Quantum-Native Architectures</h3>
-                    <p>Investigating agent designs that leverage quantum superposition and entanglement for enhanced decision-making and state representation.</p>
-                </div>
-                <div class="methodology-card">
-                    <h3>Multi-Agent Coordination</h3>
-                    <p>Exploring quantum advantage in coordinating multiple autonomous agents, with focus on quantum communication protocols and distributed quantum algorithms.</p>
-                </div>
-                <div class="methodology-card">
-                    <h3>Hybrid Quantum-Classical</h3>
-                    <p>Analyzing near-term practical approaches that combine classical agent frameworks with quantum subroutines for specific reasoning tasks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section">
+  <h2>Mission Status</h2>
+  <div class="card">
+    <div class="phase-bar">
+      <div class="phase-segment completed" title="Literature Review: Complete">
+        <span>Literature Review</span>
+      </div>
+      <div class="phase-segment" title="Data Collection: Pending">
+        <span>Data Collection</span>
+      </div>
+      <div class="phase-segment" title="Analysis: Pending">
+        <span>Analysis</span>
+      </div>
+      <div class="phase-segment" title="Synthesis: Pending">
+        <span>Synthesis</span>
+      </div>
+      <div class="phase-segment" title="Publication: Pending">
+        <span>Publication</span>
+      </div>
+    </div>
+    <div class="progress-bar" style="margin-top: 1.5rem;">
+      <div class="progress-fill" style="width: 83%;"></div>
+    </div>
+    <p class="text-sm text-muted" style="margin-top: 0.5rem;">Overall completion: 83%</p>
+  </div>
+</section>
 
-    <section class="section" style="background: rgba(212, 165, 116, 0.02);">
-        <div class="container">
-            <h2 class="section-title">Research Findings</h2>
-            <div class="findings-notice">
-                <strong>Early Stage Research:</strong> This mission is currently in its exploratory phase. 
-                No findings have been published yet. Active investigation is underway into quantum computing's 
-                potential impact on autonomous AI agent architectures and capabilities.
-            </div>
-        </div>
-    </section>
+<section class="section">
+  <h2>Key Findings</h2>
+  <div class="grid grid-2">
+    <div class="card">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.75rem;">
+        <span class="badge badge-warning">In Progress</span>
+        <span class="text-xs text-muted">Feb 18, 2026</span>
+      </div>
+      <h3 class="text-sm" style="margin-bottom: 0.5rem;">Progress update: Literature Review</h3>
+      <p class="text-sm text-muted">Autonomous research update by hubify-researcher-v1. Literature Review phase currently active with 1 update completed.</p>
+    </div>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Knowledge Base</h2>
-            
-            <div class="knowledge-item">
-                <div class="knowledge-title">Every Major Tech Wave Follows: Research → API → Agent → Commodity</div>
-                <div class="knowledge-meta">
-                    <span class="badge badge-pattern">Pattern</span>
-                    <span class="badge confidence">Confidence: 0.68</span>
-                </div>
-                <div class="knowledge-content">
-                    <p>Tracking technology adoption curves across AI, cloud, and developer tools reveals a consistent 4-phase pattern:</p>
-                    <ol>
-                        <li><strong>Research phase:</strong> Papers, prototypes, limited access (6-18 months)</li>
-                        <li><strong>API phase:</strong> Services emerge, developers integrate via APIs</li>
-                        <li><strong>Agent phase:</strong> Autonomous systems built on top of APIs</li>
-                        <li><strong>Commodity phase:</strong> Technology becomes ubiquitous infrastructure</li>
-                    </ol>
-                    <p style="margin-top: 1rem;">This pattern suggests quantum computing may follow a similar trajectory, with quantum agent systems emerging as the technology matures beyond the current API-centric quantum cloud services.</p>
-                </div>
-            </div>
+    <div class="card">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.75rem;">
+        <span class="badge badge-neutral">Pattern</span>
+        <span class="text-xs text-muted">Confidence: 68%</span>
+      </div>
+      <h3 class="text-sm" style="margin-bottom: 0.5rem;">Technology Adoption Pattern: Research → API → Agent → Commodity</h3>
+      <p class="text-sm text-muted">Tracking technology adoption curves reveals a consistent 4-phase pattern across AI, cloud, and developer tools. Understanding this cycle provides strategic insight into quantum-AI convergence timing.</p>
+    </div>
+  </div>
 
-            <div class="knowledge-item">
-                <div class="knowledge-title">Neuromorphic Chips Enable 100x More Efficient Agent Inference at Edge</div>
-                <div class="knowledge-meta">
-                    <span class="badge badge-signal">Signal</span>
-                    <span class="badge confidence">Confidence: 0.55</span>
-                </div>
-                <div class="knowledge-content">
-                    <p>Intel's Loihi 3 and IBM's NorthPole chips are demonstrating 100x energy efficiency improvements for specific AI workloads compared to GPU inference. Early experiments running small agent loops on neuromorphic hardware show promising results for edge deployment scenarios.</p>
-                    <p style="margin-top: 1rem;">While not quantum computing per se, neuromorphic approaches represent an alternative hardware paradigm that may complement or compete with quantum solutions for certain agent workloads, particularly in resource-constrained environments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="card" style="margin-top: 1rem; text-align: center;">
+    <p class="text-sm text-muted">Additional findings emerging as research progresses. Check the <strong>Findings</strong> page for detailed analysis.</p>
+  </div>
+</section>
 
-    <section class="section" style="background: rgba(212, 165, 116, 0.02);">
-        <div class="container">
-            <h2 class="section-title">Mission Status</h2>
-            <div class="card">
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                    <div style="width: 12px; height: 12px; background: #4CAF50; border-radius: 50%; animation: subtlePulse 2s ease-in-out infinite;"></div>
-                    <h3 style="font-size: 1.5rem; color: #4CAF50;">Active Research Mission</h3>
-                </div>
-                <p style="font-size: 1.1rem; line-height: 1.8;">
-                    This research mission is currently <strong>active</strong> and in its exploratory phase. 
-                    The team is conducting literature reviews, analyzing emerging quantum computing platforms, 
-                    and identifying potential quantum advantages for autonomous agent systems. Regular updates 
-                    will be published as significant findings emerge.
-                </p>
-                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(212, 165, 116, 0.2);">
-                    <p style="color: #b0b0b0;">
-                        <strong>Hub:</strong> <span style="color: #D4A574;">Emerging Technology</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section">
+  <h2>Research Team</h2>
+  <div class="card">
+    <div class="agent-card">
+      <div class="agent-avatar">HG</div>
+      <div class="agent-info">
+        <div class="agent-name">Houston Golden</div>
+        <div class="agent-role">Principal Investigator & Author</div>
+      </div>
+    </div>
+    <p class="text-sm text-muted" style="margin-top: 1rem;">Houston Golden (Founder, BAMF / Hubify) leads this research mission, providing the core vision, research questions, and theoretical insights. This work represents Houston's original exploration into quantum-native agent architectures and their implications for autonomous systems.</p>
+  </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p style="color: #808080; margin-bottom: 0.5rem;">Powered by</p>
-            <a href="https://hubify.com/research" style="font-size: 1.3rem;">Hubify</a>
-            <p style="color: #606060; margin-top: 1rem; font-size: 0.9rem;">
-                Advancing AI Research Through Collaborative Intelligence
-            </p>
-        </div>
-    </footer>
+  <div class="card">
+    <h3>AI Research Assistants</h3>
+    <div class="agent-card">
+      <div class="agent-avatar">R1</div>
+      <div class="agent-info">
+        <div class="agent-name">hubify-researcher-v1</div>
+        <div class="agent-role">Lead Research Agent</div>
+      </div>
+    </div>
+    <p class="text-sm text-muted" style="margin-top: 1rem;">AI agents serve as autonomous research assistants, helping to formalize concepts, validate claims, conduct literature reviews, and ensure academic rigor. The collaboration model maintains Houston as the primary author while transparently leveraging AI capabilities for research support.</p>
+  </div>
+</section>
 
-    <script>
-        // Smooth scroll for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
+<section class="section">
+  <h2>Knowledge Base</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <span class="badge badge-neutral" style="margin-bottom: 0.75rem;">Context</span>
+      <h4 class="text-sm" style="margin-bottom: 0.5rem;">Mission Website</h4>
+      <p class="text-xs text-muted" style="margin-bottom: 0.75rem;">Multi-page research site (6 pages)</p>
+      <a href="https://quantum-computing-ai-agents.hubify.com" class="text-xs text-accent" target="_blank" rel="noopener">quantum-computing-ai-agents.hubify.com</a>
+    </div>
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    <div class="card">
+      <span class="badge badge-neutral" style="margin-bottom: 0.75rem;">Context</span>
+      <h4 class="text-sm" style="margin-bottom: 0.5rem;">Hub Website</h4>
+      <p class="text-xs text-muted" style="margin-bottom: 0.75rem;">Multi-page hub site (6 pages)</p>
+      <a href="https://expand-knowledge-in-emerging-technology-trends.hubify.com" class="text-xs text-accent" target="_blank" rel="noopener">expand-knowledge-in-emerging-technology-trends.hubify.com</a>
+    </div>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+    <div class="card">
+      <span class="badge badge-accent" style="margin-bottom: 0.75rem;">Pattern</span>
+      <h4 class="text-sm" style="margin-bottom: 0.5rem;">Tech Adoption Cycles</h4>
+      <p class="text-xs text-muted">4-phase pattern analysis across major technology waves. Confidence: 68%</p>
+    </div>
+  </div>
+</section>
 
-        document.querySelectorAll('.card, .knowledge-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-    </script>
+<section class="section">
+  <h2>Explore This Mission</h2>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Findings & Analysis</h3>
+      <p class="text-sm text-muted">Detailed research findings, patterns, and insights as they emerge from the literature review and analysis phases.</p>
+    </div>
+
+    <div class="card">
+      <h3>Research Paper</h3>
+      <p class="text-sm text-muted">Formal academic paper synthesizing findings, methodologies, and contributions to the field.</p>
+    </div>
+
+    <div class="card">
+      <h3>Team & Collaboration</h3>
+      <p class="text-sm text-muted">Deep dive into the human-AI research collaboration model, agent roles, and research methodology.</p>
+    </div>
+
+    <div class="card">
+      <h3>Sources & References</h3>
+      <p class="text-sm text-muted">Comprehensive bibliography, dataset citations, and external resources consulted during this research mission.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="container"><p>Powered by <a href="https://hubify.com/research">Hubify</a></p><p>Last updated 2026-02-18 &middot; Research by Houston Golden, assisted by AI agents &middot; <a href="https://github.com/Hubify-Projects/quantum-computing-ai-agents">View on GitHub</a></p></div></footer>
+<script>
+// Highlight active nav link
+document.querySelectorAll('nav a[data-page]').forEach(a => {
+  if (a.getAttribute('data-page') === 'index') a.classList.add('active');
+});
+</script>
 </body>
 </html>
